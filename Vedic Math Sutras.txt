@@ -1,0 +1,18 @@
+16 Sanskrit Sutras:
+Vedic Maths is not just about mathematical techniques, but about changing the way we approach problems. It's about growing our minds to see patterns, possibilities, and joy in numbers!
+The first Sutra is 'Ekadhikena Purvena'. In English, it means "By one more than the previous one". It's used in cases where you need to multiply numbers that end with 5. It's like a magic trick. Multiply 25 by 25 in a split second!
+Sutra 2: 'Nikhilam Navatashcaramam Dashatah', roughly "All from 9 and the last from 10". Say bye to borrowing & carrying in subtraction. Subtracting large numbers? Piece of cake!
+Sutra 3: 'Urdhva-Tiryagbhyam', or "Vertically and crosswise". This one's a game-changer for multiplication! Multiply large numbers together like you're a human calculator! 
+Next, 'Paravartya Yojayet', or "Transpose and adjust". Specially tailored for solving complex equations, it simplifies math like never before. Imagine solving x + y = 10 and 2x - 3y = 12 within seconds!
+Sutra 5, 'Shunyam Anyat', implies "Anything times zero is zero". You might say, "well, that's obvious!" But it has further applications in solving more complex problems in algebra and calculus!
+'Anurupye – Sunyamanyat', Sutra 6, roughly translates as "If one is in ratio, the other one is zero". This can simplify complex mathematical situations involving proportions! 
+Sutra 7: 'Sankalana-vyavakalanabhyam' translates to "By addition and by subtraction". It comes in handy when dealing with differential calculus problems. Who thought calculus could be fun? 
+'Purana Puranabhyam' or "By the completion or non-completion" is the 8th Sutra. This one helps with algebraic equations! It can make solving quadratic and cubic equations a breeze. 
+Onto the 9th Sutra, 'Chalana-Kalanabyham', or "Differences and Similarities". Used extensively in solving equations that are tough to factorize. Maths doesn't seem so intimidating anymore, right?
+Sutra 10: 'Yaavadunam' translates as "By the deficiency". This is a great tool for squaring numbers and finding cube roots. Say goodbye to calculators!
+'Vyashtisamanstih' or "Part and Whole" is the 11th Sutra. It’s used for solving problems related to compound multiplication involving fractions. It makes fractions, fun! 
+Sutra 12: 'Shesanyankena Charamena' translates to "The remainders by the last digit". It is especially useful for finding the remainder of large numbers. Big numbers don’t seem so big anymore!
+Onto Sutra 13: 'Sopaantyadvayamantyam', which means "The ultimate and twice the penultimate". This has numerous applications, such as finding squares of numbers ending with 5. It's pure magic!
+Sutra 14: 'Ekanyunena Purvena' or "By one less than the previous one". This can help you instantly square numbers that end in 1. Try it! 
+'Gunitasamuchyah', the 15th Sutra, means "The product of the sum is equal to the sum of the product". It can be used to solve problems in algebra and geometry. 
+Lastly, the 16th Sutra, 'Gunakasamuchyah', which means "The factors of the sum is equal to the sum of the factors". This finds applications in solving simultaneous quadratic equations.

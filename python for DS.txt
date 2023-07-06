@@ -1,0 +1,14 @@
+Objectives
+discover the key concepts covered in this course
+install Anaconda Python on Windows
+install Anaconda Python on macOS
+execute commands on the Python shell
+perform basic math operations
+execute arithmetic operations on variables
+work with built-in functions
+use the different kinds of primitive data types, such as strings, numbers, and Booleans
+create and use complex data types, such as lists, tuples, and sets
+perform type conversions
+use single, double, and triple quotes to create strings
+perform escaping and formatting of strings
+summarize the key concepts covered in this course.

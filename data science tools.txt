@@ -1,0 +1,21 @@
+Top 10 data science tools to learn to become irreplaceable in the job market:
+1.  Python:
+Python is the most popular programming language in data science due to its versatility, extensive libraries (such as NumPy, Pandas, and SciPy), and strong community support.
+2.  R:
+R is another widely used programming language for data science, particularly in statistical analysis and visualization. It has a vast ecosystem of packages and is preferred by many statisticians.
+3.  Jupyter Notebooks:
+Jupyter Notebooks provide an interactive environment for data exploration, visualization, and analysis. It allows you to combine code, visualizations, and narrative text in a single document.
+4.  SQL:
+Structured Query Language (SQL) is essential for working with relational databases. Proficiency in SQL enables you to extract, manipulate, and analyze data stored in databases efficiently.
+5.  Apache Hadoop:
+Hadoop is an open-source framework for distributed processing of large datasets across clusters of computers. Understanding Hadoop and its ecosystem (e.g., HDFS, MapReduce, Spark) is valuable for handling big data.
+6.  Apache Spark:
+Apache Spark is a fast and versatile distributed computing system commonly used for big data processing, machine learning, and streaming analytics. It provides APIs in Java, Scala, Python, and R.
+7.  TensorFlow:
+TensorFlow is an open-source library widely used for machine learning and deep learning. It offers a flexible ecosystem for building and deploying various types of neural networks.
+8.  scikit-learn:
+scikit-learn is a popular machine-learning library in Python that provides a wide range of algorithms for classification, regression, clustering, and more. It also offers utilities for data preprocessing and model evaluation.
+9.  Tableau:
+Tableau is a powerful data visualization tool that allows you to create interactive and visually appealing dashboards and reports. Proficiency in Tableau helps in effectively communicating insights from data.
+10.  Git:
+Git is a version control system that enables collaboration, code management, and tracking of changes in your projects. It is crucial for reproducibility, sharing code, and working with other data scientists.

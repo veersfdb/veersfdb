@@ -1,0 +1,21 @@
+Topic - Ridge Regression in ML :
+Ridge Regression (RR)  is regularization technique used in statistical modeling & ML to handle the problem of multicollinearity (high correlation) among predictor variables.
+It is an extension of linear regression ( LR)  that adds a penalty term to the least squares objective function, resulting in a more stable and robust model.
+In LR objective is find coefficient that⬇️ sum of squared residual btwn predicted value & actual value of dependent variable. However when there r correlated predictor in dataset the estimated coefficient can become highly sensitive to small change in data leading to overfitting RR addresses issue by introducing penalty term that shrinks coefficient estimates towards 0. 
+
+The penalty term is determined by tuning parameter called lambda (λ) which control amount of regularization applied. larger value of λ result in greater shrinkage of the coefficients. 
+Mathematically RR modifies OLS objective function by adding penalty term based on the L2-norm (Euclidean norm) of the coefficient vector 
+
+The objective function can be written as:
+
+Minimize: (sum of squared residuals) + λ * (sum of squared coefficients)
+
+The addition of the penalty term encourages the model to find a balance between minimizing the residuals and minimizing the magnitude of the coefficients. 
+
+This helps to reduce the impact of multicollinearity and stabilize the model's performance.
+RR can solve using optimization algorithm such GD or closed-form solution
+
+The optimal value of regularization parameter λ is typically determined through techniques like CV where data divided into training & validation set to evaluate model performance for different values of λ
+Ridge regression is a useful technique for managing multicollinearity and improving the generalization ability of a linear regression model
+
+ By controlling the complexity of the model, it helps to prevent overfitting and provides more reliable estimates of the coefficients

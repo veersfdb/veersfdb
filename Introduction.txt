@@ -1,0 +1,51 @@
+Hi first of all, thanks for giving me an opportunity to introduce myself to you, Joseph.
+Myself veera sankar as already you know. am from kadapa in AP.
+I have completed my graduation in B.Tech from JNTU.
+I have 5.5 years of experience in IT industry.
+and relavent to snowflake around 3 years experience by writing sql queries, created tables and views also created snowpipe and stored procedures.
+last company was virtusa here i worked on the migration from oracle to snowflake data warehouse for the client iron mountain.
+
+coming to my roles and responsibilities:
+I worked with the creation of customized roles and normal user creation and service account user creation as part of the business requirement.
+I have created the databases, scemas and db objects like tables, views and materialized views.
+I do have experience in creating snowpipe, tasks, streams, and stored procedures.
+i have deployed the tables and views created in the dev sandbox to the stage and production environements by using terraform creation in git repository.
+I have cloned the production data using zero copy cloning in snowflake for code modifications and testing purposes.
+I do have experience in using flatten table function to produce lateral view of array columns.
+And I do have experience for setting up of workflow pipelines by using Airflow DAG for managing and scheduling Jobs. and monitored the flow of the pipelines.
+
+
+
+
+how are you
+Hi Joseph Good morning, I am doing good
+and how about you.
+
+what work you have done
+I have 5.5 years of experience in IT industry.
+and relavent to snowflake around 3 years experience by writing sql queries, created tables and views also created snowpipe and stored procedures.
+last company was virtusa here i worked on the migration from oracle to snowflake data warehouse for the client iron mountain.
+coming to my roles and responsibilities:
+I worked with the creation of customized roles and normal user creation and service account user creation as part of the business requirement.
+I have created the databases, scemas and db objects like tables, views and materialized views.
+I do have experience in creating snowpipe, tasks, streams, and stored procedures.
+i have deployed the tables and views created in the dev sandbox to the stage and production environements by using terraform creation in git repository.
+I have cloned the production data using zero copy cloning in snowflake for code modifications and testing purposes.
+I do have experience in using flatten table function to produce lateral view of array columns.
+And I do have experience for setting up of workflow pipelines by using Airflow DAG for managing and scheduling Jobs. and monitored the flow of the pipelines.
+Attending the daily scrum meeting to get the inputs from customers and updating the daily status.
+Used flatten table function to produce lateral view of VARIANT, OBJECT, and ARRAY column.
+data lake ingestion pipeline was used to move data csv file from landing bucket into data lake in parquet format.
+for historic load manually triggered once when historic load needed.
+for daily Master dag will be triggered at scheduled time.
+Refinement pipelines performs various transformations on the data loaded to the external tables and stores them in the snowflake tables.
+for daily load it will triggered with its corresponding Ingestion Master DAG.
+there is one aggregate table  in refinement which reads data from another tables.
+Worked with Gitlab and Airflow jobs for scheduling the processes.
+and monitored and then pushed the code to stg and prod environments.
+also written sql queries for daily load and historic loads.
+
+what is work you need to assaign?
+
+check with understand him or not?
+

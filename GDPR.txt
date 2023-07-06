@@ -1,0 +1,219 @@
+Rules and Regulations
+The GDPR introduced major changes both for companies within the EU and for companies outside the EU that were not previously covered by EU law. The CCPA is similarly a landmark law requiring new protections for California residents.
+
+
+
+These rules include additional rights for data subjects, a standardized data protection regime, and an obligation on businesses to make privacy by design a key element of all business processes.
+
+
+
+Our GDPR expert has kindly agreed to answer some questions on the key rules and regulations of the GDPR. 
+
+Select each topic to learn what he has to say.
+
+When do the GDPR and the CCPA apply to personal information?
+
+The GDPR applies to the processing of personal data in the context of the activities of an establishment of a data controller or a data processor in the EU, regardless of whether the processing takes place in the EU or not.
+
+
+
+The GDPR protects the personal data of individuals in the EU that organizations outside the EU process to offer goods or services. It also applies to non-EU-based organizations that may monitor how you behave online (for example, analyzing your online behavior to predict your online shopping habits).
+
+
+
+This means that all organizations, irrespective of where they are located, must ensure that the personal data of individuals in the EU is protected to the standard outlined in the GDPR.
+
+
+
+The CCPA applies to for-profit businesses that do business in California if the business (i) has a gross revenue of over $25 million; (ii) buys, receives or sells the personal information of 50,000 or more California residents, households or devices; or (iii) derives 50% or more of their annual revenue selling California resident's personal information.
+
+How does the GDPR's definition of personal data compare with the CCPA's definition of personal information?
+
+Personal data in the EU means any information relating to an identified or identifiable natural person (also referred to as a "data subject"). The definition of 'personal data' has been widened significantly – for example, IP addresses, cookie identifiers, mobile device IDs, and other types of online identifiers are now considered personal data.
+
+
+
+So, for example, if a product analyzes EU residents' IP addresses, the product must comply with the GDPR's requirements.
+
+
+
+Personal information under the CCPA is information that identifies, relates to, or could reasonably be linked with a consumer or a consumer's household.
+
+For example, it includes things like name, SSN, records of products purchased, internet browsing history, fingerprints, and inferences from other personal information that could create a profile about the consumer's preferences and characteristics.
+
+What does privacy by design and default mean?
+Privacy by Design is an approach to projects that promote privacy and data protection compliance from the start. Organizations must ensure that privacy and data protection is a key consideration in the early stages of every project, and then throughout its lifecycle. For example, when:
+
+Building new IT systems for storing or accessing personal data
+Developing products or strategies that have privacy implications
+Starting a new project
+Embarking on a data sharing initiative
+Using data for new purposes
+
+
+Organizations should therefore ensure that they integrate core privacy considerations into existing project management and risk management methodologies and policies.
+
+
+
+Privacy by Default means that the strictest privacy settings automatically apply for products and services (by “default”).
+
+For example, no manual change to such privacy settings should be required on the part of the user.
+
+As an example, if you sign up for a service that includes a published profile, such as a profile on a social media site, the profile should show the minimum information required and not add additional elements, such as age and location.
+
+What is the impact of the GDPR on transferring data outside the EU?
+
+Personal data can only be transferred to countries outside the EU and the EEA where certain, very specific arrangements are in place ensuring data protection.
+
+
+
+Some countries are recognized by the EU as having adequate protections in place, i.e. in line with the standards of protection required in the EU.
+
+
+
+However, for most other non-EEA countries, there are procedures that need to be complied with in order for the legitimate transfer of personal data from the EU, such as entering into data transfer contracts between the companies who are sharing the personal data.
+
+
+
+Note that countries outside the EU and EEA are often referred to as “third countries”.
+
+----------------------------------
+
+Rights of Data Subjects
+The GDPR and CCPA have strengthened the rights of data subjects in many key areas. It is very important to follow the correct procedures when dealing with these issues. These procedures are available to you in Hitachi Vantara's Data Subject Rights Policy.
+
+
+
+Hitachi Vantara has a defined process for responding to data subject rights requests. If you receive a request, immediately notify privacy@hitachivantara.com.
+
+
+
+Let's look at some examples of how the GDPR and CCPA protect data subjects.
+
+Select each person’s name to learn their story.
+Adam – Breach Notification
+“Our company has an agreement with a lease company who recently experienced a significant security breach where the personal data of our employees they hold was compromised. Our company had to notify the relevant EU regulator within 72 hours of becoming aware of the breach. We also had to notify our EU-based employees whose personal data was compromised directly, without undue delay, after becoming aware of the breach and California residents in the most expedient time possible and without undue delay.ˮ
+
+
+
+If personal data gets into the wrong hands, a person’s financial or personal life could be compromised. A personal data breach here means a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data.
+
+Kimberley – Right of Access
+“As part of my job within Procurement, I visited a website from one of our suppliers and requested a product brochure to be sent to me. Suddenly I started to receive unsolicited calls from a marketing company trying to sell me different kinds of products. It troubled me as to where they got my information. Then I realized that I provided some personal details as part of the sign-up process on the supplier’s website.
+
+
+
+I wondered if the supplier had provided my personal details to the marketing company without my permission, so I filed a Data Subject Access Request with the supplier to obtain details on how and why they were processing my personal data. The supplier was obligated to provide a copy of the data they hold on me and tell me how, and why, they were processing it.ˮ
+
+
+
+When a company receives a Data Subject Access Request from an individual, they may be obliged to provide the personal data they hold free of charge.
+
+
+
+In the EU, the response is due within a month of receiving the request. This timeframe can be extended to three months for complex requests, or for numerous requests from the same individual.
+
+
+
+In California, the response is due within 45 calendar days of receiving the request. It may be extended up to 90 days total. The response may be limited to categories of personal information collected, specific pieces of information collected, the categories of sources from which the data was collected, the purposes for which the business uses the personal information, categories of third parties with whom the business shares with third parties, and the categories of information that the business sells or discloses to third parties. Business must only provide this information for the 12-month period preceding the request.
+
+Jose – Right to Erasure
+“Ten years ago, I was wrongly convicted of a crime. Thankfully, my conviction was quashed on appeal. However, I recently noticed that when you search on the Internet for my name, details of my conviction appear in the search results.
+
+
+
+I contacted the company that runs the search engine and requested that they remove any articles related to my conviction. They agreed to do this.ˮ
+
+
+
+This right is also known as the ‘Right to be Forgotten’. Under certain conditions, individuals may be entitled to have companies that control their personal data, erase their personal data. The conditions under which a data subject can request “to be forgotten” may include the data no longer being relevant to the original purpose for processing, or the data subject withdrawing consent to processing their data.
+
+
+
+There are many exceptions to the Right to be Forgotten under both EU and California law. For example, an employer may not be required to forget a current employee's personal data.
+
+Maylee – Data Portability
+“One of our employees recently decided to change jobs, so she requested us to transfer all the personal data we held on her to her new employer.ˮ
+
+
+
+Under certain conditions, the personal data of an EU-resident provided to an organization which is held in an automated format must be freely transmitted, online and in a machine readable format, directly to the data subject or to another organization at the specific request of the data subject.
+
+
+
+The organization must provide the data in a structured, commonly used, and machine-readable format. This right is meant to benefit individuals by allowing them to obtain a copy of data held about them and use it for their own purposes across different services, such as transferring built-up shopping history from one loyalty card provider to another.
+
+Satu – Right to Object: E.g. Profiling
+
+“As part of our new sales strategy, we rolled out an application that tracks user visits to our website by IP address, and then goes to a popular business social networking site to try to see who may have been looking at our website based on the IP address. This then produces a list of possible names which our sales team can use as Sales leads.
+
+
+
+However, we did not clearly explain this functionality in our website privacy statement. As a result, we were contacted by an EU-based customer who requested us to stop processing the personal data as he did not give permission for such processing.”
+
+
+
+EU data subjects have a right to object to their personal data being used for “profiling”. Profiling is any form of automated processing of personal data to evaluate certain personal aspects relating to an individual.
+
+
+
+Under the GDPR, profiling is only permitted in certain narrow circumstances – such as when the subject gives explicit consent or pursuant to a legal right. If a data subject consents to a data processor using their personal data for profiling purposes, the processor must implement technical and organizational measures to correct personal data inaccuracies and avoid errors, secure all personal data, etc. Measures such as anonymization, pseudonymizing, and encryption for further processing of the data should be considered. Achieving this in practice may be challenging, especially from a technical perspective; so, if any issues arise, you can find out who to contact about this in our Contact Details section.
+
+--------------------
+Transatlantic Service
+Olga works in her company’s headquarters in Dublin. As part of a talent development program, she needs to send the personal data of an employee to a company subsidiary in the US.
+
+She asks your advice on how she can protect the personal data.
+What three things would you tell her?
+Systems used to process the data must have undergone a data privacy assessment.
+XXXX--The data must be processed on equipment within the EU before the results are sent to the US.
+Olga must ensure that the appropriate arrangements are in place between the Dublin headquarters and its US subsidiary to which the data is being transferred.
+The data collection and any processing must comply with all principles of the GDPR.
+
+Personal data can only be transferred if all the data protection principles concerning its collection, processing, and transfer are met. For transfers to countries outside the EU and the EEA, certain very specific arrangements must be in place ensuring data protection.
+
+Ensuring the protection of personal data to the standards envisaged by the GDPR requires the company processing the personal data of EU subjects to guarantee that certain safeguards for data protection and privacy are in place, and all the data subjects’ rights apply to the data when it is processed in the third country.
+
+------------------------------
+
+Privacy Principles
+The GDPR, CCPA and, in particular, their privacy principles impact the way we interact with our customers. The principles regulate how personal data – including customer data – is processed.
+
+
+
+Processing means having access to personal data, doing something with personal data or otherwise coming into contact with such data.
+
+
+
+So, when you provide a service to our customers, you may be processing personal data. This is why the privacy principles apply to you!
+
+
+
+Let’s examine some of the key principles that impact how we provide service to our customers and how you can ensure you comply with them.
+Purpose Limitation
+Under the GDPR, personal data can generally only be used for the specified purpose for which it was collected and not further processed in a manner that is incompatible with this purpose.
+
+Example: We have a healthcare customer that collects GDPR-regulated personal data for the purpose of providing medical treatment. We could only access that data for the purpose of enabling our customer to provide medical treatment such as by ensuring the availability of our products and services. In accordance with the principle of purpose limitation, however, we could not access our customer's data for marketing purposes.
+
+Data Minimization
+
+The principle of data minimization requires that you must only collect and process the specific personal data necessary to complete a specific task.
+
+Storage Limitation
+Under privacy laws like the GDPR and CCPA, you must delete any personal data you have collected when it is no longer needed pursuant to the terms of our Document Retention Policy. You must also comply with the Document Classification Policy and Handling Guidelines when storing the personal data.
+
+Obligation of Confidentiality
+Under privacy laws like the GDPR and CCPA, you are obligated to keep our customers’ personal data confidential. This means you must take the necessary steps to ensure that any personal data you receive from a customer is treated appropriately under the Document Classification Policy and Handling Guidelines.
+
+Security of Processing
+It is your responsibility to take appropriate technical and organizational measures to secure personal data.
+
+
+
+You are responsible for complying with the Data Classification Policy and Handling Guideline as well as the Information Security Policy Framework when handling personal data.
+
+
+
+Personal data should also only be shared or accessed on a need-to-know basis, which means each workforce member can only access personal data that he or she actually needs to perform his or her job duties.
+
+

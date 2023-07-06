@@ -1,0 +1,153 @@
+Chapter 2: Snowflake Quick Start
+Overview
+In this chapter, we will cover how you can quickly get started with Snowflake by guiding you through the account signup process. This includes choosing a Snowflake cloud provider, region, and edition. Once you have determined these details, we will provide the essentials of connecting to their web interface. We hope this chapter gets you started quickly and helps you avoid any confusion so that you are up and running on the web interface in a few minutes.
+
+Creating a Snowflake Account
+Now that you understand the fundamental differences with the Snowflake Data Cloud, let’s get you started by creating your Snowflake account. Go to https://signup.snowflake.com/ on your web browser, as shown in Figure 2-1. Snowflake currently still offers $400 of free credits over 30 days. This makes it extremely convenient for you to get started on Snowflake and learn the essentials at no or low cost. (This is a lot better than the old days of having to buy and install Oracle, Netezza, Teradata, etc. It is also way easier than installing open source data engines.) Just remember at the end of the 30 days, Snowflake will start charging you.
+
+Figure 2-1: Initial Snowflake Account Signup
+
+Let’s get started. Fill in your details of First Name, Last Name, Email, Company, and Country and click the Continue button. The next screen (Figure 2-2) immediately prompts you to select an edition, cloud provider, and region. All of these decisions are actually related to each other, so let’s cover what are the major differences between editions, clouds, and regions.
+
+Note
+Each and every account is in a specific cloud provider and region. Currently, you can only move data between different regions. Shares only can be made within a specific region. When you design your architecture, make sure to take this into account that if you want to easily share data throughout an organization, you would want to create accounts in the same region. If you do not, then you will need to replicate data to the other region, and there will be some replication cloud service costs for this.
+
+Figure 2-2: Choosing an Edition, Cloud Provider, and Region Form
+
+Snowflake Editions Overview
+Snowflake comes in several editions that are priced differently and that offer different levels and combinations of features. The following are the available choices and a description of what each provides:
+
+Standard Edition: “A strong balance between features, level of support, and cost.” The Standard edition is Snowflake’s introductory offering. This offering can work well for standard analytical database users if they do not require features provided in the Enterprise edition and above. This lowest-cost Standard edition is actually pretty good for many businesses. I have done a ton of data work on Standard editions that scaled and performed really well. There are some key features that are not available on it that may push you to another edition, but it works extremely well for standard workloads. Any smaller organization that couldn’t afford standard on-premise expensive systems like Netezza, Teradata, and Exadata will be extremely pleased with the ease of use, scalability, and performance of this edition.
+
+Enterprise Edition: “Standard plus 90-day time travel, multi-cluster warehouses, and materialized views.” Enterprise is really Snowflake’s main offering and the one that is sold to most organizations by Snowflake sales. The Enterprise edition includes all the features of the Standard edition and adds the ability to set up to 90 days of time travel, multi-cluster warehouses, and other enterprise-level cloud services such as materialized views. This allows organizations that have enterprise-level needs to have more time travel, the ability to scale out with multi-cluster virtual warehouses, and other features like search optimization services and materialized views. The main additions with the Snowflake Enterprise edition are
+
+Multi-cluster virtual warehouses
+
+Search optimization service
+
+Materialized views
+
+Database failover and fallback between Snowflake accounts for business continuity and disaster recovery
+
+Extended time travel (currently up to 90 days)
+
+Periodic rekeying of encrypted data
+
+Column-level security
+
+If you think you will want to use any of these features, I suggest you start with the Enterprise edition for your initial signup and trial. Just realize that this edition is typically more expensive than the Standard edition.
+
+Business Critical: “Enterprise plus enhanced security, data protection, and database failover/fallback.” We typically see customers who are larger and want enhanced security choosing this edition. The main additions with the Business Critical edition are
+
+Customer-managed encryption keys (Tri-Secret Secure)
+
+Support for secure and direct proxy to your other on-premise data centers or virtual networks using AWS PrivateLink or Azure Private Link
+
+Support for PHI data
+
+Support for PCI DSS
+
+Even though the self-service interface only shows the three major editions above, there is one additional edition that cannot be self-service provisioned. This is the Virtual Private Snowflake (VPS) edition.
+
+Virtual Private Snowflake (VPS) Edition: This edition is where Snowflake provides the highest level of security by providing a completely isolated and separate Snowflake environment from all other accounts. These VPS accounts do not share any resources whatsoever with accounts outside the VPS. (This edition is not offered for self-provisioning.) Organizations with highly sensitive data needs and business requirements often choose this edition. Since it uses separate resources, it is the highest-priced edition. You must realize though that while you gain extra security, this also limits the access to any other accounts and data. Also, VPS accounts use different naming conventions and have different URL structures for access. The major difference with this version is that there is a dedicated and isolated metadata store as well as pool of virtual servers for your organization’s data system.
+
+Note
+In older documentation and articles, you will see reference to a “Premier” edition of Snowflake. This edition has been eliminated.
+
+We have covered the Snowflake editions in detail here, but Snowflake will continue to make updates and changes. Please refer here for the latest information on Snowflake edition offerings: https://docs.snowflake.com/en/user-guide/intro-editions.html#overview-of-editions.
+
+Selecting a Cloud Provider and Region:
+Choosing a Cloud Provider
+Snowflake currently runs on the following three separate cloud providers:
+
+Amazon Web Services (AWS)
+
+Microsoft Azure
+
+Google Cloud Platform
+
+Snowflake was completely architected on the cloud, and the initial version of Snowflake only worked on AWS before June 2018. In 2018, Snowflake Corporation rebuilt the architecture to work on Azure. In June 2019, Snowflake launched on Google Cloud Platform in preview at their Snowflake Summit. For the most part, the Snowflake interface and performance to the end user feels exactly the same. When I first went onto my beta Azure Snowflake instance, I couldn’t really tell the difference from the front end. Behind the scenes though, AWS is by far the most mature and widely used since Snowflake engineers built the initial version on that starting in 2012. Also, if you require your account to have HITRUST CSF certification, this is only available on AWS and Azure regions at this time of publication. See here for the latest:
+
+https://docs.snowflake.com/en/user-guide/intro-cloud-platforms.html#hitrust-csf-certification
+
+(Snowflake on Google Cloud Platform does not support HITRUST CSF.)
+
+You may already have been using one or more of these three cloud providers for your business needs and have your minds made up. From a high-level perspective, Snowflake works almost the same from the front end on any of the clouds except for a few differences noted in the following. If you are new to the cloud, then there are a few differences in what Snowflake supports with different providers.
+
+There are certain limitations on Azure Private Link on Azure Cloud. If this is an important feature for you, then please refer to the latest information at https://docs.snowflake.com/en/user-guide/privatelink-azure.html#label-pl-azure-reqs-limits.
+
+Also, not all third-party tools in Partner Connect support Azure Cloud.
+
+GCP does not offer any equivalent service such as AWS PrivateLink or Azure Private Link for configuring a direct secure connection between virtual private clouds. Snowflake on GCP is not currently certified for HITRUST CSF.
+
+Choosing a Region
+You picked what cloud provider you ideally want to run on. Now it is time to pick a region. In Figure 2-4 are the current regions. Most users choose a region based on their locality and their business needs. Currently, if you have a requirement to have your Snowflake Data Cloud hosted in Asia, then you must choose between AWS and Azure since GCP is not supported in any Asia regions currently. What providers and regions are offered is often being updated and changing. You can check here for the latest regions offered:
+
+Figure 2-4: Snowflake Supported Regions in Cloud Providers
+
+https://docs.snowflake.com/en/user-guide/intro-regions.html
+
+Currently, Snowflake has these regions supported on these three specific cloud providers as displayed in Figure 2-4.
+
+Understanding Snowflake Edition Pricing
+As of this publication date, Snowflake’s pricing starts at the following price points per credit in USD.
+
+Standard - $2/Credit
+
+Enterprise - $3/Credit
+
+Business Critical - $4/Credit
+
+Pricing is dependent upon specific regions. For the latest pricing, please refer to Snowflake’s pricing page. You just need to provide your choice of edition, cloud provider, and region to get their latest prices (www.snowflake.com/pricing/).
+
+Snowflake currently offers two ways to buy their Data Software as a Service (DSaaS): on demand or pre-paid capacity. Snowflake sales is focused on selling pre-paid capacity plans of certain lengths and offers negotiated pricing depending on the size of purchase and length of agreement.
+
+
+Immediately Connecting to Snowflake
+Once you select your Snowflake edition, cloud provider, and region and click “Get Started,” you will be taken to a screen that looks like Figure 2-5.
+
+Figure 2-5: Snowflake Account Signup Confirmation Screen
+Larger View
+
+At the same time, you will get an email titled “Activate Your Snowflake Account.” This email has a standard request to confirm your email and activate your account. Once you click Activate, you will be taken to a screen where you can create your initial username and password, which looks similar to Figure 2-6.
+
+Figure 2-6: Snowflake Initial Setup Screen
+Larger View
+
+Snowflake works on the most popular browsers of Chrome, Safari, Firefox, Opera, and Edge. Here are the specific version requirements if you start to have any problems:
+
+https://docs.snowflake.com/en/user-guide/setup.html#browser-requirements
+
+Initial Web View
+If everything worked out correctly, then within a minute or so you can be up and running on Snowflake! (If you have worked with installing databases or setting up on-premise ones in the past, you will be amazed at how quickly you can be up and running and querying data.) Figure 2-7 shows what Snowflake’s initial web interface will look like.
+
+Snowflake has done a reasonably good job with its “Getting to know Snowflake” material. If you know SQL, then this is a really great way to take Snowflake for a spin by using one of their “Welcome to Snowflake” tutorials, such as “Run a query in the worksheet.” If you want to get going quickly from here with the web interface, then jump to Chapter 4 where we cover in depth the Snowflake visual web interface as it works now.
+
+Tip	
+When you do self-service signup and provisioning, a random URL is created for your account, and it is dependent upon the cloud provider and region you selected. We recommend immediately bookmarking this in your browser so you don’t forget it. If you want to change the name to something customized and related to your company, you need to contact Snowflake operations.
+
+Initial Snowflake Account URL
+In Figure 2-7 the initial Snowflake account URL sent for this example is
+
+Figure 2-7: Snowflake First Screen After Login
+Larger View
+
+https://dx13010.us-central1.gcp.snowflakecomputing.com
+
+Each part of the URL structure corresponds with the initial decisions you made filling out the preceding account signup forms. Let’s break down the URL structure:
+
+https://dx13010.us-central1.gcp.snowflakecomputing.com
+
+Account Regional Unique identifier: dx13010
+
+Snowflake Account Region: us-central1
+
+Snowflake Cloud Provider: gcp (Google Cloud Provider)
+
+The unique identifier for most Snowflake capacity customers is set to the customer’s company name or abbreviation. For our example though for this quick start, dx13010 was some unique random identifier set for me. The remaining fields will reflect what region and cloud provider you chose. There are currently three cloud provider identifiers: aws (Amazon Web Services), azure (Microsoft Azure), and gcp (Google Cloud Platform). Also, be aware that for Snowflake AWS West Region (Oregon), there is no region or cloud provider identifier. This was Snowflake’s first region, and they removed the region and cloud provider identifiers.
+
+The Snowflake Web Interface
+Snowflake’s web interface is the easiest way to initially connect. When you go through the self-service signup process, this is where you are immediately taken to when you activate your account from your email. Snowflake sales engineers or operations create an account for you. Then you can immediately log in with this full-featured web interface. We will also cover both Snowflake web interfaces of the Classic Console and Snowsight in great depth in Chapters 4 and 5 so you know all the Snowflake interface essentials.
+
+Summary
+In this chapter, we provided details on how you can get started quickly with Snowflake. We hope it enables you to try out Snowflake rapidly by creating a trial account and getting started rapidly within minutes by making it easy to select a cloud provider, edition, and region. Once your account is created, you can jump into the web interface and begin creating objects and loading data. You can jump to Chapter 4 or 5 to go through the web interface next or jump to Chapter 12 to see how to easily start loading sample datasets.

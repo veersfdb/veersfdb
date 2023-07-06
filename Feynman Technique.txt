@@ -1,0 +1,16 @@
+How to learn anything.
+
+The Feynman Technique:
+The Feynman Technique is a learning method that prioritizes simplicity to build depth of understanding.
+The Feynman Technique involves four key steps:
+
+1. Set the Stage
+2. ELI5
+3. Assess & Study
+4. Organize & Review
+1. Set the Stage: Write down everything you know about the topic.
+
+2. ELI5: Try to explain the topic to someone without a base understanding of it.
+. Assess & Study: Study to fill in the knowledge gaps exposed by the prior step.
+
+4. Organize, Convey, & Review: Organize your knowledge into a clear narrative, convey it to a few people, and iterate on your study.

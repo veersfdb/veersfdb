@@ -1,0 +1,54 @@
+6 Gmail hacks that you shouldn't miss:
+1. Use Gmail offline
+You can read & reply to your emails even when offline.
+Here's how you can turn it on:
+Settings> All settings > Offline > Enable offline mail
+You can select various options of how you want your offline access to be set up before the changes. Here's how 👇
+2. Send your email later.
+Want to make it look like you're at your desk at 0900?
+Now here's how you can do that 👇 
+-> Click the down arrow next to 'send'
+-> Choose "Schedule send"
+-> Pick the date + time you want
+Let Gmail do its work.
+3. Send a confidential email
+How it works?
+Tap on the 'lock' symbol while sending a new email.
+It will disable the features such as copying, printing, forwarding & downloading by the recipient.
+4. Snooze an email
+Have an email that you don't want to deal with now?
+Set a reminder for later right away:
+Here's how 👇 
+Click on the clock icon on right
+Choose how long you want to snooze the email.
+It'll appear back on your inbox on that date.
+5.  Use these shortcuts to Navigate, Manage & Compose emails more efficiently.
+c  --> ompose a new mail
+/  --> search for emails
+K  --> Move to a newer conversation
+J  --> Move to an older conversation
+N  --> Move to the next email in a conversation
+P  --> Move to the previous email in a conversation
+X  --> Select or deselect an email
+E  --> Archive selected email(s)
+#  --> Delete selected email(s)
+R  --> Reply to an email
+A  --> Reply all to an email
+F  --> Forward an email
+Shift+I  --> Mark selected email(s) as read
+Shift+U  --> Mark selected email(s) as unread
+Ctrl+S  --> save email draft
+Ctrl+Enter Send an email
+Ctrl+Shift+C  --> Add CC recipients
+Ctrl+Shift+B  --> Add BCC recipients
+Ctrl+Shift+F  --> Apply a label from an email
+Ctrl+Shift+U  --> Remove a label from an email
+Ctrl+] --> Indent text in the compose window
+Ctrl+[ --> Outdent text in the compose window
+Ctrl+Shift+7 --> Numbered list in the compose window
+Ctrl+Shift+8 --> Bulleted list in the composed window
+
+6. Get rid of promotional emails.
+First, log in with your Gmail account on a desktop/laptop.
+In the search bar, just type "Unsubscribe"  and hit enter.
+Now, tick the box above to select all the emails with this tag & click on delete. Voila!

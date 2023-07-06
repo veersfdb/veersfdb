@@ -1,0 +1,22 @@
+--write a query to find no of gold medal per swimmer for swimmer who won only gold medals
+--using sub queries
+SELECT gold as player_name,
+		count(1) as no_of_medals
+FROM events
+WHERE gold not in (SELECT 
+						bronze  
+					FROM events
+				   UNION ALL
+				   SELECT silver 
+				   FROM events)
+GROUP BY gold;
+--------------------------
+--using  group by having cte
+WITH cte AS (
+SELECT gold AS player_name, 'gold' AS medal_type FROM events
+UNION ALL SELECT bronze, 'bronze' AS medal_type FROM events
+UNION ALL SELECT silver, 'silver' AS medal_type FROM events)
+SELECT player_name, COUNT(1) AS no_of_gold_medals
+FROM cte
+GROUP BY player_name
+HAVING COUNT(DISTINCT medal_type = 1 AND MAX(medal_type) = 'gold';

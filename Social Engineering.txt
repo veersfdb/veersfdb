@@ -1,0 +1,30 @@
+Social Engineering – Email Threats
+Have you ever opened your inbox to find an email telling you that you’ve won $1 million? All you need to do is call this number...
+Scams:
+You probably didn’t call the number. You knew it was a scam. 
+However, there are much subtler forms of manipulation about which we must be aware.
+Cybercriminals:
+Cybercriminals use technology to manipulate people, both online and offline.
+Victims unwittingly provide sensitive information, system access, and even money without realizing the deception.
+Social Engineering:
+Known as social engineering, this method of conducting fraudulent activity takes many forms.
+The best defense against it is to be aware of potential risks and develop behaviors that challenge and interrogate the supposed facts.
+What Is Physical Deception?
+Social engineering is practiced both physically and virtually.
+Tailgating, where someone not otherwise authorized follows a member of staff through a secure doorway, is an example of a physical form of social engineering.
+Another is shoulder surfing, where information is read or recorded over someone’s shoulder.
+What Is Virtual Deception?
+Pretexting involves criminals impersonating someone official (such as a credit card company or a utility company employee) or creating some other pretense to gather the victim’s personal information.
+Phishing involves emails, texts, or other messages (SMSes) being sent from seemingly legitimate sources, often with the pretense of a sense of urgency, to manipulate the victim into sharing personal or other sensitive information.
+Vishing uses automated phone systems to prompt users to log in, thus capturing their details.
+What Are Traps?
+Baiting is prompting someone to use a portable storage device that installs malware on their computer.
+Quid pro quo involves help offered from a seemingly legitimate source (for example, your IT helpdesk) or offering a gift or prize in return for information.
+What Are Watering Hole Attacks?
+A watering hole attack is a strategy where the attacker targets a website that employees of the targeted organization regularly visit.
+Then, the attacker infects the website with malware, which, in turn, infects the employees’ machines when they visit the website.
+What Are Best Practices for Staying Secure?
+Stay securely connected by verifying people’s identities using trusted sources.
+Be sure to never open attachments, follow links, run software, or use hardware from untrusted sources.
+Always double-check a company’s phone number and website.
+Never share your password.

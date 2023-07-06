@@ -1,0 +1,101 @@
+Hi good evening,
+this is veera from AP kadapa.
+--and i joined hitachi on 3rd march as snowflake data engineer and 
+I have 5 and half years experience in information technology. 
+and before here i worked at Virtusa as a  snowflake data engineer
+
+----------------------------------------------------------------------
+My name is Veera sankar reddy and I'm here to introduce myself as the newest member of this team.
+I'm thrilled to be here and excited to get started.
+
+A little bit about myself: I graduated from JNTU Anathapuramu with a b.tech degree in the field of EEE 
+and have been working in the IT idustry for 5.5 years. 
+In my previous role, I worked as a snowflake data developer in the migration project .
+
+In this new role, I'm looking forward to working with each of you
+
+I'm lookinng forward to bringing my skills and expertise to this project.
+I'm eager to get started and to collaborate with all of you.
+
+ to achieve our goals.
+
+Hi good evening everyone,
+Thanks for giving me an opportunity to introduce myself to you.
+my name is veera sankar reddy  
+and I'm a new resource(snowflake data engineer) on this project. 
+previously i am working as an snowflake data engineer on data migration projects.
+I'm looking forward to working with each of you
+--------------------------------------------------------------------------------------------------------------------
+
+Hi All,
+
+Thank you for the warm welcome!
+Looking forward to working with each of you.
+
+for more opportunities in Hitachi Vantara.
+
+
+--------------------------------------
+Hi all, Good Evening
+Thanks for giving me an opportunity to introduce myself to you.
+My name is Veera sankar reddy and i am from Kadapa in AP, I have completed my graduation in B.Tech.
+My hobbies are listening music, Reading books specially novels, surfing in the internet, solving puzzles.
+my strengths are Positive thinking and quick understanding skills and time maintenance.
+and coming to my weaknesses, i also have some weaknesses like coping up with new peoples, family, beliveness on others and i am overcoming these negatives.
+goals 
+
+---------------------------
+
+how are you
+Hi Joseph Good morning, I am doing good
+and how about you.
+
+what work you have done
+Developed airflow DAGs(Directed Acyclic Graph) as customer requirement.
+ pipelines in Dev environment.
+Worked with Gitlab and Airflow jobs for scheduling the processes.
+Cloned Production data for code modifications and testing.
+Attending the daily scrum meeting to get the inputs from customers and updating the daily status.
+Used flatten table function to produce lateral view of VARIANT, OBJECT, and ARRAY column.
+data lake ingestion pipeline was used to move data csv file from landing bucket into data lake in parquet format.
+for historic load manually triggered once when historic load needed.
+for daily Master dag will be triggered at scheduled time.
+Refinement pipelines performs various transformations on the data loaded to the external tables and stores them in the snowflake tables.
+for daily load it will triggered with its corresponding Ingestion Master DAG.
+there is one aggregate table  in refinement which reads data from another tables.
+Worked with Gitlab and Airflow jobs for scheduling the processes.
+and monitored and then pushed the code to stg and prod environments.
+also written sql queries for daily load and historic loads .
+
+what is work you need to assaign
+
+check with understand him or not
+
+scrum methodology in agile technology with kanban board
+POD4
+srini(lead)
+niranjan(senior)
+tulasi(same join-hyd)
+veera
+-----
+joseph (head)
+paul (sr Architect)
+
+------------------------
+ETL 
+dev , stg & prod
+code validation( unit test)
+landing s3 to data lake s3
+data lake snowflake
+tags to the ticket and tasks
+azure dashboard(tickets monitoring)- backlogs
+assign the tickets
+
+-------------------------------------------------------------
+
+veera.reddy@texascapitalbank.com
+
+0328@TCB3845
+
+“I'm interested in opportunities to create career development resources and provide guidance to people who need them. After reading the job description for your director of career development, I see an opportunity to use my experience to scale the exceptional services you currently offer to a larger audience.”
+

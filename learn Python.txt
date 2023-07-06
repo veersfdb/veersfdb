@@ -1,0 +1,36 @@
+A better way to learn Python:
+
+🌞Code daily
+🏗️Build a project; small or big
+⚒️Work on WHYs not HOWs of the concept
+🥅Set a goal & stick with it
+💡Show your work & get feedback
+📝Don't just read watch topics; practice them
+📈Keep moving one notch up DAILY
+🎉End of the day ENJOY!!!
+----------------------------------------------------
+Today we are going to talk about the basics of unit testing in #Python 🧵🐍👇
+
+The Python programming language includes built-in packages for testing:
+🐍 doctest
+🐍 unittest
+
+To kick things off, you'll learn about the `doctest` module! 🧵🐍👇
+What is `doctest`? #Python's `doctest` modules looks for pieces of text in docstrings that look like REPL sessions. 
+Next, it executes them and verifies that the output in the docstring matches when the code is actually run
+
+Here is an example of a #Python function with a docstring that could be used by the `doctest` module to test that function:
+def double(a):
+	"""
+	>>>double(4) 
+	8
+	>>> double(9)
+	18
+	return a*2
+-----------------
+You call the `doctest` module with #Python by using the `-m` flag with the Python executable
+
+If you call `doctest` without any flags, it will only show output if there is an error in the test
+
+If you pass `-v` to `doctest`, then you run it in verbose mode
+#run the module with doctest

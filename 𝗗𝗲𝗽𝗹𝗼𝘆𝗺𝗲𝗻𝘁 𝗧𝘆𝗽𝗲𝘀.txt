@@ -1,0 +1,33 @@
+What are the four 𝗠𝗮𝗰𝗵𝗶𝗻𝗲 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗠𝗼𝗱𝗲𝗹 𝗗𝗲𝗽𝗹𝗼𝘆𝗺𝗲𝗻𝘁 𝗧𝘆𝗽𝗲𝘀?
+ 
+Even if you will not work with them day to day,  the following are the four ways to deploy a ML Model you should know and understand as a MLOps/ML Engineer.
+ 
+➡️ 𝗕𝗮𝘁𝗰𝗵: 
+ 
+👉 You apply your trained models as a part of ETL/ELT Process on a given schedule.
+👉 You load the required Features from a batch storage, apply inference and save the results to a batch storage.
+👉 It is sometimes falsely thought that you can’t use this method for Real Time Predictions.
+👉 Inference results can be loaded into a real time storage and used for real time applications.
+ 
+➡️ 𝗘𝗺𝗯𝗲𝗱𝗱𝗲𝗱 𝗶𝗻 𝗮 𝗦𝘁𝗿𝗲𝗮𝗺 𝗔𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻: 
+ 
+👉 You apply your trained models as a part of Stream Processing Pipeline.
+👉 While Data is continuously piped through your Streaming Data Pipelines, an application with a loaded model continuously applies inference on the data and returns it to the system - most likely another Streaming Storage.
+👉 This deployment type is likely to involve a real time Feature Store Serving API to retrieve additional Static Features for inference purposes.
+👉 Predictions can be consumed by multiple applications subscribing to the Inference Stream.
+ 
+➡️ 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 - 𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲:
+ 
+👉 You expose your model as a Backend Service (REST or gRPC).
+👉 This ML Service retrieves Features needed for inference from a Real Time Feature Store Serving API.
+👉 Inference can be requested by any application in real time as long as it is able to form a correct request that conforms API Contract.
+ 
+➡️ 𝗘𝗱𝗴𝗲: 
+ 
+👉 You embed your trained model directly into the application that runs on a user device.
+👉 This method provides the lowest latency and improves privacy.
+👉 Data in most cases is generated and lives inside of device significantly improving the security.
+ 
+What types of deployments are you mostly working on? Let me know in the comments!  👇
+
+--------

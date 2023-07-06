@@ -1,0 +1,28 @@
+Recognizing and Responding to Security Incidents
+Experiences Shared
+You would think that the more that businesses invest in security technology, the safer they should be from hackers, right?
+
+
+
+Let’s take a look at the impact information security breaches had on these people.
+
+Jarrett
+“My company incurred a hefty fine after a major data breach led to civil and criminal investigations.”
+Data breaches can often lead to expensive legal proceedings.
+
+Isla
+“A cyber-attack on my online business caused massive reputational damage when the credit card details of my customers were leaked.”
+Consumers are quick to lose faith in a company with poor online security.
+
+Kareem
+
+“I was forced into spending several millions on shielding my company’s systems after hackers installed malware.”
+According to a 2020 McAfee report, cybercrime incidents cost the global economy just over 1% of global GDP.
+
+Jane
+“I accidentally installed rogue software on my computer, severely damaging my business.”
+According to a 2020 Verizon report, one in five security incidents such as this are the result of a mistake made by an employee, which means human error accounts for 22% of data breaches. The report also found that 17% of all data breaches involved the installation of malware.
+
+Hana
+“After being implicated in an internal data breach, I was fired from my job and narrowly avoided prison.”
+

@@ -1,0 +1,113 @@
+1.What is difference between unique and distinct?
+Answer :
+There is no difference between unique and distinct keywords apart from one difference. Unique is applied before insertion and retrival.It consists  of non duplicate values. If unique constraint is given it does not take duplicate values. Distinct is used in retrieval it gives the suppressed row(ex if two rows are same it will show single row and non duplicate row) therefore distinct is the combination of suppressed duplicate and non duplicate rows. Specify DISTINCT or UNIQUE if you want Oracle to return only one copy of each set of duplicate rows selected (these two keywords are synonymous). Duplicate rows are those with matching values for each expression in the select list.
+So there is no functional difference between Unique and distinct both have same functionalities.
+2.What is Normalization?
+Answer :
+Database Normalization is organizing non structured data in to structured data.Database normalization is nothing but organizing the tables and columns of the tables in such way that it should reduce the data redundancy and complexity of data and improves the integrity of data.
+Database Normalization is nothing but technique of designing the database in structured way to reduce redundancy and improve data integrity.
+3.What is purpose of Normalization?
+Answer :
+Normalization is used for following purpose:
+To Eliminate the redundant or useless data
+To Reduce the complexity of the data
+To Ensure the relationship between tables as well as data in the tables
+To Ensure data dependencies and data is logically stored.
+4.What is Self join?
+Answer :
+Self join is nothing but the table joins with itself. There are lot of tables which contains more than one functionality at that time the concept of self join comes to the picture.
+
+Syntax:
+SELECT a.column_name, b.column_name…
+FROM table1 a, table1 b
+WHERE a.common_field = b.common_field;
+
+Real Example:
+If one table contains Employee and its position.If we need to fetch the Employees and its managers then self join is used.
+
+5.Consider following tables:
+
+create table table_a(id numeric);
+
+create table table_b(id numeric);
+
+insert into table_a(id) values
+(10),
+(20),
+(30),
+(40),
+(50);
+
+insert into table_b(id) values
+(10),
+(30),
+(50);
+
+Write a query to fetch values in table table_a that are and not in table_b without using the NOT keyword?
+Answer :
+The Query for the same is:
+select * from table_a
+except
+select * from table_b;
+
+6.What are different forms of Database Normalization?
+Answer :
+There are following Four Normal Forms used in Database Normalization:
+1.First Normal Form
+2.Second Normal Form
+3.Third Normal Form
+4. Boyce-code Normal Form(BCNF)
+
+7.Explain First Normal Form with example.
+Answer :
+The first normal form is the normal form of database where data must not contain repeating groups.The database is in First normal form If,
+1.It contains only automic values.
+Automic values:- The Single cell have only single value
+2.Each Record needs to be unique and there are no repeating groups.
+Repeating Groups:- Repeating group means a table contains 2 or more values of columns that are closely related.
+Example:
+Consider following table which is not normalized:
+Employee Table:
+Employee No	Employee Name	Department
+1	Amit	OBIEE,ETL
+2	Divya	COGNOS
+3	Rama	Administrator
+To bring it in to first normal form We need to split table into 2 tables.
+First table:Employee Table
+Employee No	Employee Name
+1	Amit
+2	Divya
+3	Rama
+Second Table: Department table
+Employee No	Department
+1	OBIEE
+1	ETL
+2	COGNOS
+3	Administrator
+We have divided the table into two different tables and the column of each table is holding the Automic values and duplicates also removed.
+
+8.What is difference between view vs materialized view?
+
+Answer :
+
+View	Materialized Views(Snapshots)
+1.View is nothing but the logical structure of the table which will retrieve data from 1 or more table.		1.Materialized views(Snapshots) are also logical structure but data is physically stored in database.
+2.You need to have Create view privileges to create simple or complex view		2.You need to have create materialized view ‘s privilges to create Materialized views
+3.Data  access is not as fast as materialized views		3.Data retrieval is fast as compare to simple view because data is accessed fom directly physical location
+4.There are 2 types of views:
+1.Simple View
+
+2.Complex view
+
+4.There are following types of Materialized views:
+1.Refresh on Auto
+
+2.Refresh on demand
+
+5.In Application level views are used to restrict data from database		 5.Materialized Views are used in Data Warehousing.
+
+9.What is Fast Refresh and Incremental Refresh by considering snapshot?
+Answer :
+When in database level some DML changes are done then Oracle Database stores rows describing those changes in the materialized view log and then uses the materialized view log to refresh materialized views based on the master table. This process is called incremental or fast refresh. 
+In this situation materialized view is not full refresh and it only refresh the data on incremental basic and only incremental data is added in to materialized view.
+

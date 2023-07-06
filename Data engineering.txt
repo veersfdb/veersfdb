@@ -1,0 +1,6 @@
+Data engineering as a field is growing rapidly! A lot of great content is available that provides actionable steps to improve as a DE. However, vendor content may help but always push for a specific product. 
+
+Here are a few ways you can spot them: 👇🏽
+1. Associating tools with concepts: They try associating a "trendy" data jargon with their product. E.g., Data lakehouse/lake/fabric,...
+2. Tons of Jargon: They have many backlinks to other articles in the vendor's blog.
+3. Grandiose claims: They make huge claims without specifying the nuances or caveats. (e.g., dev cost vs. data process optimization cost, management cost).

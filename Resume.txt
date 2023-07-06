@@ -1,0 +1,65 @@
+Veera Sankar Reddy G
+Senior Consultant 
+
+Summary
+5+ Years of experience as a Snowflake Data Engineer with Snowflake, SQL, AWS, Airflow, Python and oracle
+Knowledge
+This section should be used to identify specialized knowledge based on technology, industries, and functional expertise.
+•	Technologies: Snowflake, SQL, AWS, Airflow, Python 
+•	Functional Expertise: Data pipeline management, ETL development using Snowflake. 
+•	Industry Expertise: Banking, Healthcare system, cloud and automation with Airflow.
+Prior Work History
+Virtusa 
+Consultant	Sep 2021 – Oct 2022
+It is a record keeping system to provide storage and information management, records management, information destruction, and data backup and recovery services.
+•	Developed ELT programs using Snowflake to implement the business requirements. 
+•	Worked on implementing One time Data Migration of Multistate data from Oracle to Snowflake by using Python and Snow SQL.
+•	Day-to-Day responsibility includes developing ELT pipelines in and out of data warehouses, developing major regulatory and reports using advanced SQL queries in snowflake.
+•	Involved in enhancements and maintenance activities of the data warehouse, including tuning, and modifying stored procedures for code enhancements. 
+•	Effectively worked in a Snowflake version-based environment and used deployment groups to migrate the objects. 
+•	Used flatten table function to produce lateral view of VARIANT, OBJECT, and ARRAY column.
+•	Created Airflow DAGs to schedule the ingestions, ELT jobs and various business reports from external sources like S3, Parquet into Snowflake.
+•	Cloned Production data for code modifications and testing.
+•	Working with Gitlab and Airflow jobs for scheduling the processes.
+•	Created monitors, alarms, notifications, and logs for DAGs using CloudWatch.
+•	Writing the scripts and executing them in a development environment as needed by the customer.
+•	Attending the daily scrum meeting to get the inputs from customers and updating the daily status.
+•	As a part issue, analyzing and checking the existing code and performance issues.
+
+•	Technologies: Snowflake, SQL, AWS, Airflow, Python.
+Medtronic
+Software Developer 	Sep 2019 – Aug 2021
+This project is about analyzing the sales data for Medtronic’s products and for analysis of sales data we have built a solution.
+•	Extracted data from Oracle then used snowflake for data warehousing.
+•	Implemented slowly changing dimension methodology for accessing the full history of accounts. 
+•	Worked with DDL code conversions from oracle to snowflake.
+•	Written a Code for Stored Procedures.
+•	Created audit job table for tracking of scripts execution.
+•	Creation of various streams, tasks, sequences, tables based on the requirement of the project.
+•	Finding the column or data type mismatches while creating new tables and adding new columns to existing tables and recreating them as per the standards.
+•	Written critical case statements based on the user requirements.
+•	Data validations have been done through information schema.
+•	Shared sample data using grant access to customers for SIT.
+•	Have been involved in writing the queries based on the reports output.
+•	Experience in various methodologies like Waterfall and Agile
+•	Technologies: Snowflake, Oracle, GIT, SQL, Terraform, AWS.
+Multifonds
+Associate Software Developer 	May 2017 – Aug 2019
+
+•	Analyzing requirements.
+•	Developed PL/SQL Procedures, Functions, Packages.
+•	Altering the existing PL SQL blocks (procedures, functions, triggers) according to the new business needs.
+•	Implemented advanced features like Bulk Collect, Bulk Bind, Global Temporary Tables.
+•	Worked extensively in the analysis of flat files and loading them successfully into different databases like oracle, SQL Server.  
+•	Working on individual User Stories & Functional/Technical Requirements
+•	Writing Unit Test & Creation and execution of test cases
+•	Have used all join conditions for writing the queries based on the user requirements.
+•	Technologies: Oracle, Linux, Service Now, Jira.
+
+Education and Certifications
+
+•	B-Tech in Electrical & Electronics Engineering, SVIST, Kadapa, YSR Dist.
+April 2011 — May 2014 
+ 
+ 
+

@@ -1,0 +1,49 @@
+create or replace view nation_change_data as
+-- This subquery figures out what to do when data is inserted into the NATION table
+-- An insert to the NATION table results in an INSERT to the NATION_HISTORY table
+select n_nationkey, n_name, n_regionkey, n_comment, 
+country_code, start_time, end_time, current_flag, 'I' as dml_type
+from (select n_nationkey, n_name, n_regionkey, n_comment, country_code,
+             update_timestamp as start_time,
+             lag(update_timestamp) over (partition by n_nationkey order by update_timestamp desc) as end_time_raw,
+             case when end_time_raw is null then '9999-12-31'::timestamp_ntz else end_time_raw end as end_time,
+             case when end_time_raw is null then 1 else 0 end as current_flag
+      from (select n_nationkey, n_name, n_regionkey, n_comment, country_code, update_timestamp
+            from nation_table_changes
+            where metadata$action = 'INSERT'
+            and metadata$isupdate = 'FALSE'))
+union
+-- This subquery figures out what to do when data is updated in the NATION table
+-- An update to the NATION table results in an update AND an insert to the NATION_HISTORY table
+-- The subquery below generates two records, each with a different dml_type
+select n_nationkey, n_name, n_regionkey, n_comment, country_code, start_time, end_time, current_flag, dml_type
+from (select n_nationkey, n_name, n_regionkey, n_comment, country_code,
+             update_timestamp as start_time,
+             lag(update_timestamp) over (partition by n_nationkey order by update_timestamp desc) as end_time_raw,
+             case when end_time_raw is null then '9999-12-31'::timestamp_ntz else end_time_raw end as end_time,
+             case when end_time_raw is null then 1 else 0 end as current_flag, 
+             dml_type
+      from (-- Identify data to insert into nation_history table
+            select n_nationkey, n_name, n_regionkey, n_comment, country_code, update_timestamp, 'I' as dml_type
+            from nation_table_changes
+            where metadata$action = 'INSERT'
+            and metadata$isupdate = 'TRUE'
+            union
+            -- Identify data in NATION_HISTORY table that needs to be updated
+            select n_nationkey, null, null, null, null, start_time, 'U' as dml_type
+            from nation_history
+            where n_nationkey in (select distinct n_nationkey 
+                                  from nation_table_changes
+                                  where metadata$action = 'INSERT'
+                                  and metadata$isupdate = 'TRUE')
+     and current_flag = 1))
+union
+-- This subquery figures out what to do when data is deleted from the NATION table
+-- A deletion from the NATION table results in an update to the NATION_HISTORY table
+select nms.n_nationkey, null, null, null, null, nh.start_time, current_timestamp()::timestamp_ntz, null, 'D'
+from nation_history nh
+inner join nation_table_changes nms
+   on nh.n_nationkey = nms.n_nationkey
+where nms.metadata$action = 'DELETE'
+and   nms.metadata$isupdate = 'FALSE'
+and   nh.current_flag = 1;

@@ -1,0 +1,19 @@
+What Is Data Privacy?
+
+
+What Are Data Privacy Rules?
+Data privacy rules apply to any information that can be used on its own, or in combination with other clues, information, or context, to identify, contact, or locate an individual. Data privacy rules include company policies, the EU’s General Data Protection Regulation (GDPR), US federal and state law, and other region-specific laws and regulations.
+
+What Types of Data Are Covered?
+Data covered by the privacy rules is any information related to a person that could be used to identify that person, either directly or indirectly.
+It could be a name, photo, email address, date of birth, ethnicity, religion, financial record, medical information, IP address, or employment history. It could even be posts on social networking sites.
+
+What Terminology Is Used?
+Different countries use different terms to describe this kind of data.
+For example, in the US, it’s known primarily as either personal information (PI) or personally identifiable information (PII).
+In Europe, it’s known as personal data.
+
+How Do We Ensure Data Security?
+To help us protect our data, you must know the types of data we hold, who has access to the data, where data is held, what it is used for, and the consequences of a data privacy breach.
+Consequences of a data privacy breach can include heavy fines and significant reputational damage. If private data falls into the wrong hands, it may be possible for criminals to identify an individual and target them for illegal activity.
+

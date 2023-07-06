@@ -1,0 +1,23 @@
+Hi Srini,
+
+
+Please find the Below Accomplishments for this week (27thMar – 31st Mar2023 )
+Completed the following:
+1.	Connected with Joseph for one-on-one discussion.
+	a.	Briefly explained about the project and ETL process flow.
+	b.	went through some of the tools like AWS, Visual studio, and snowflake.
+2.	Went through some of the snowflake & AWS tutorials in Hitachi Internal portal.
+3.	Received the TCB Credentials and tried to connect through VDI but faced some issues.
+4.	Attended the sessions with Paul:
+	a.	on Snowflake Tables & Architecture.
+	b.	on Snowflake Sensitive data identification Demo.
+5.	Connected with AVD Support team for VDI Connectivity issues. password reset is done, and Issue is resolved.
+6.	With the help of Srini, requested for VDI Components provisioning.
+7.	Requested access for the below in SailPoint with the help of Srini:
+	a.	AWS platform services NP (PU & Admin),
+	b.	Snowflake DEV and QA Engineers,
+	c.	Changepoint Daptive( Time-tracking & standard User).
+
+
+Thanks & Regards,
+Veera.

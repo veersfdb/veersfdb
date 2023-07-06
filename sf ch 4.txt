@@ -1,0 +1,348 @@
+Chapter 4: Snowflake Web Interface—Classic Console:
+Overview
+In this chapter, we will cover Snowflake’s Classic Console web interface and all the functionality within it. We will guide you to where all the key features are on the web interface. Snowflake’s Classic Console is a well-thought-out web interface that has been a key part of the Snowflake platform since the beginning. As of this writing, the Classic Console is still the main interface used to interact with Snowflake. However, Snowflake Corporation has recently re-released their new front-end interface named the Preview App (Snowsight), which will be the future interface eventually. We also cover the Preview App (Snowsight) in the next chapter.
+-----------------------
+Web Interface: Classic Console Main Overview
+The Snowflake Classic Console is the main way you can interact with the Snowflake Data Cloud. It provides access to almost all the functionality of the entire Snowflake Data Cloud service at both an account and an organization level. You can get access to the main areas of Databases, Shares, Data Marketplace, Warehouses, Worksheets, History, and Account (with the ACCOUNTADMIN role or equivalent). Before we cover the Classic Console, one major tip that you must always be aware of is that the interface changes are dependent upon what role you have selected in the upper right. In Figure 4-1 is the Snowflake Classic Console interface with the upper-right role selection displayed.
+
+Tip	
+The “role” you select in the upper right of the preceding web interface impacts what icons are displayed on your web interface. Unless you are using the ACCOUNTADMIN role (or an equivalent custom role with Account privileges), then you will not see the Account icon, and you will not be able to access any of the Account details in the Classic Console. You also will not see the Notifications icon or be able to create shares or view them without additional access.
+
+Figure 4-1: Classic Console and Role Selection
+Larger View
+
+Databases
+The Databases icon is the main area for all database objects in the Snowflake Data Cloud. The main database interface contains the functionality to Create, Clone, Drop, and Transfer Ownership on databases within the Snowflake Data Cloud.
+
+Figure 4-2 shows what the Snowflake Classic Console database listing interface looks like. You can easily create, clone, drop, or transfer ownership on databases from the buttons in the following interface. If you are coming from other relational databases, you will notice how easy it is to create a database without dealing with any complex configuration settings.
+
+Figure 4-2: Databases
+Larger View
+
+You may notice at first in the interface that the Create and Clone links are active and the Drop and Transfer Ownership links are grayed out. The Snowflake Classic Console is consistent in graying out actions that are not available unless you highlight the row of the listed object.
+
+For you to view all the navigation to objects within a database such as tables, views, schemas, etc. in the Classic Console, you need to click a database name on the left-hand side of the database listings. Once you click the database name, you will see the navigation change to display tabs for the main seven objects within databases: Tables, Views, Schemas, Stages, File Formats, Sequences, and Pipes. You will also notice the navigation displays which database you have selected with the Databases ➤ [Database Name] in the interface. Let’s go through each of these database objects and how to navigate to them and when you want to use them in your Snowflake Data Cloud work.
+
+Tables
+Tables are the key construct of all relational database systems. They are the mechanism that contains the data. Snowflake tables are easy to use if you come from any previous relational database work since they are created by normal Data Definition Language (DDL) syntax of CREATE, ALTER, DROP, TRUNCATE, and RENAME statements. The only major difference with Snowflake tables related to DDL is their VARIANT data type. Otherwise, all of their Data Definition Language and data types are standard to relational database systems. In Figure 4-3 is the Snowflake Classic Console table listing interface. This figure shows two rows of two tables created in the CITIBIKE demo database, which will be the database we use for examples later in this book.
+
+Figure 4-3: Tables
+Larger View
+
+You can Create, Create Like, Clone, Load Table, Drop, and Transfer Ownership on tables from this web interface. We find creating tables typically is easier to do in DDL within worksheets, but if you are a GUI person, you may like to occasionally create them in the web interface, but this doesn’t really scale to large amounts of tables.
+
+You will also notice again that some of these functions are grayed out. Once you click within the row of the table, then they will become active like how the database object listings worked.
+
+Views
+Views are another key construct of relational database systems, allowing users to create virtual and materialized views of physical table data. The main purpose of views in relational database systems is to provide additional security of data and allow for flexibility of view changes without having to move/copy data. Snowflake also provides a feature of secure views, which allow users to create views with the definition and the details of the view hidden from the end viewer/user for greater security. Secure views also prevent exposing underlying data to user-defined functions or other programmatic mechanisms. Secure views are the ONLY type of view you can use to share in Snowflake’s data sharing feature. Secure views should not be used for views that do not need this level of privacy or security because Snowflake’s query optimizer bypasses some optimizations used for regular views and there could be some level of query performance impacts with secure views.
+
+Snowflake also provides their version of materialized views for Enterprise and above editions, which can help provide fast performance of queries by materializing the data within the view. Snowflake’s version of materialized views can only be created from one table. You cannot join other tables to create a Snowflake materialized view.
+
+A list of views is shown in Figure 4-4 where you can take actions such as Create, Drop, and Transfer Ownership of views. Like the table listing, you will notice that certain functions are grayed out that need to be done on one specific view. You must select a view in the list to have the Drop and Transfer Ownership links become active.
+
+Figure 4-4: Views
+Larger View
+
+Schemas
+Schemas are a relational database mechanism created for organization and security. They are a common mechanism used within relational databases and work similarly to any relational database you have used in the past. Snowflake schemas are also enhanced with the key new Snowflake feature of cloning. Figure 4-5 shows a standard view of Snowflake schemas listed within a database.
+
+Figure 4-5: Schemas
+Larger View
+
+Stages
+Stages are a Snowflake Data Cloud concept and specific to Snowflake. All cloud databases require you to “stage” or really move the data from on-prem or other locations to an accessible cloud location. Snowflake’s unique architecture allows you to have stages in four different ways, which include an “Internal” Snowflake Stage (technically on the AWS cloud but completely Snowflake controlled) and “External” Stages, which currently include Amazon S3, Microsoft Azure, and Google Cloud Platform.
+
+Tip	
+One key point to be very clear about is that when you transfer files to an Internal Snowflake Stage, you are charged for that file storage as a part of Snowflake’s storage costs. We have seen many Snowflake users stage large amounts of files in Snowflake Stages and load them into the database and forget to purge them from the Internal Stage. If these files are sizeable, the storage costs can add up and provide no real business value since the files have already been loaded into Snowflake. Our standard recommendation is to use the PURGE = TRUE option with COPY INTO code loading from an Internal Stage.
+
+In Figure 4-6, the Create Stage functionality is shown where you choose between the four different types of stages including Snowflake Managed, AWS S3, Microsoft Azure, and Google Cloud Platform. You can stage your data on any of these even if your Snowflake account is running off another cloud provider. These are just staging locations where data can be staged to be loaded.
+
+Figure 4-6: Stages
+Larger View
+
+Let’s understand how you create an External Stage on Amazon’s AWS S3 file storage. Every External Stage needs a stage name and stage URL at a minimum. Most customers want to have encryption security as well for almost all use cases, so you can easily add encryption keys.
+
+Figure 4-7 shows the interface you can use to add all of these elements of the AWS External Stage depending on your business and technical needs including Name, Schema Name, S3 URL, AWS Key ID, AWS Secret Key, Encryption Master Key, and Comment. I always recommend that you comment every object you create.
+
+Figure 4-7: Creating AWS Stage
+Larger View
+
+File Formats
+File Formats similar to stages are specific to Snowflake. They are very similar though to relational database syntax that describes file type and format details so they can be loaded by bulk upload commands such as bcp (bulk copy program) for SQL Server, Oracle Loader for Oracle, nzload for Netezza, and FastLoad for Teradata.
+
+File Formats simply describe the format of the file you are loading from a stage or directly from a COPY INTO statement. They can be dynamically defined within code as well. They provide the COPY INTO statement with the details of the file so it can be loaded correctly. You can Create, Clone, Edit, Drop, and Transfer Ownership of File Formats similar to other database objects.
+
+File Formats have many different syntax options as shown in Figure 4-8. The figure is an example of the top of an empty form for creating a File Format that you will get when you hit Create File Format on the web interface.
+
+Figure 4-8: File Formats
+Larger View
+
+The Create File Format form on the Snowflake interface provides several fields for you to fill out. The following are the field names and their descriptions:
+
+Name: Fill in the name of the File Format.
+
+Schema Name: Fill in the schema of the File Format that you are creating.
+
+Format Type: Available options are CSV (which DOES NOT specifically mean CSV, but really means Delimited File Type), JSON, XML, Avro, ORC, and Parquet.
+
+Compression Method: Available options are Auto, Gzip, Deflate, Raw Deflate, Bz2, Brotli, Zstd, and None.
+
+Column separator: Available options are Comma, Vertical Bar, Tab, None, and Other. You can add a custom column separator with the Other option, but it can ONLY be one character.
+
+Row separator: New Line, Carriage Return, None, or Other. You can add a custom row separator with the Other option.
+
+Header lines to skip: Enter the number of rows or lines (if any) that you want to skip.
+
+Field optionally enclosed by: None, Double Quote, or Single Quote. You use this to deal with the common delimited file issue of the delimiter being within the field or column. This encapsulates extra delimiters to enable the delimited data to load properly.
+
+Null String: Can be \\N, NULL, NUL, or Other. You can add a custom null string with the Other option.
+
+Trim space before and after checkbox: This enables the COPY INTO to trim white space before and after the field.
+
+Error on Column Count Mismatch: This is a key setting and typically for quality purposes is enabled. It identifies an error if the number of columns in the source does not match the number of columns in the destination.
+
+Escape Character: Backslash, None, or Other. You can add a custom Escape Character with the Other option. This is used to escape separators or special characters like single and double quotes.
+
+Escape Unenclosed Field: Backslash, None, or Other. You can add a custom Escape Unenclosed Field with the Other option.
+
+Date Format: Auto or Other. You can add a custom Date Format with the Other option.
+
+Timestamp Format: Auto or Other. You can add a custom Timestamp Format with the Other option.
+
+Comment: Enter a comment that describes the purpose or details of the File Format object.
+
+Sequences
+Sequences are another common database object in relational databases. Sequences allow users to increment and generate unique integer values for rows of data within tables. Figure 4-9 shows the view of the Create Sequence form.
+
+Figure 4-9: Sequences
+Larger View
+
+You can Create, Clone, Edit, Drop, and Transfer Ownership of sequences within this web interface. You will notice once you select a sequence, similar to all the other database objects, you can grant permissions to the object as well on the right-hand side.
+
+Pipes
+Pipes or Snowpipes (the original name) within this interface are relatively new to the Classic Console. Pipes are one of the unique features of Snowflake that allow for the loading of continuous data pipelines as files are transferred into External Stages. Pipes can be set up to auto-ingest files into Snowflake based on the cloud provider event mechanisms. Figure 4-10 shows the first Snowflake web interface form for creating an initial pipe. Similar to all Snowflake objects, you can also create a pipe with data definition code.
+
+Tip	
+Before you start creating your pipe, you will need a stage already created to use as the data source. Make sure to prepare the stage prior to creating the pipe. Also, if you plan to have a specific File Format you want to use in the pipe, then also create the File Format first before starting the pipe creation.
+
+Figure 4-10: Pipes
+Larger View
+
+Figure 4-10 shows the first of three dialogs that you fill out when creating a pipe. The three dialogs and the information you provide to each one are as follows:
+
+Create Pipe: Screen 1
+Pipe Name: Enter the name you want to use for your pipe (Snowpipe).
+
+Schema: Enter the schema you want to create the pipe in.
+
+Comment: Enter a descriptive comment for what the pipe does.
+
+Click the button “Next: Select a Data Source” to go to the next Create Pipe screen.
+
+Create Pipe: Screen 2 (Data Source for the Pipe)
+Stage: Select an existing stage name here from the dropdown. If you see “No options,” you need to make sure you have access to a stage for the incoming data for the pipe.
+
+Enable Auto Ingest [this will ONLY be displayed if the stage has auto-ingest capabilities; otherwise, it will never show this checkbox]: This is a very key and important setting if you are looking to do automated ingestion. If this is checked, then you MUST set up the cloud provider file bucket correctly so that auto-ingest will work.
+
+File Formats (optional): Select an existing File Format here if you want the pipe to use that specific File Format. [This is optional and can already be specified in the stage itself as well.]
+
+Click the button “Next: Select the Data Destination” to go to the third Create Pipe screen.
+
+Create Pipe Screen 3
+Data Destination: Select a schema and table where the pipe should copy the data into. The pipe works by executing a COPY INTO statement.
+
+Click the button “Create Pipe,” and your pipe will be created.
+
+Shares
+Snowflake data shares are another unique and exciting feature that is part of the Snowflake Data Cloud. We will cover data shares, Data Exchanges, and Data Marketplaces in depth in Chapter 14. If you click the Shares icon and get the following message at the bottom of the screen as shown in Figure 4-11, then this means the current role you are using DOES NOT have access to create or view data shares:
+
+Figure 4-11: Default View for Most Roles Besides ACCOUNTADMIN
+Larger View
+
+Snowflake Data Sharing
+
+Secure Shares enable you to consume data being shared with your organization and also provide data to others. Contact your account administrator to get access.
+
+You need to switch to the ACCOUNTADMIN role, or a similar role provided by your organization, so you can view the screen in Figure 4-12, which shows a listing of data shares inbound. By default if you are using the ACCOUNTADMIN role, you will see two inbound data shares named ACCOUNT_USAGE and SAMPLE_DATA.
+
+Figure 4-12: Data Share Listings View for Roles with Data Share Access
+Larger View
+
+You will also notice in Figure 4-12 right next to the Inbound light-blue link is an Outbound link. If you click the Outbound link, you will see shares that you have created for external usage by other accounts. So let’s dig into how you create an outbound or external data share to share between your own company, external suppliers, or any other external constituents you might have.
+
+There are four parts to creating a data share:
+
+Part 1: Before you can create a data share, you need to have the data properly prepared for sharing.
+
+Part 2: Create the share itself.
+
+Part 3: Review the secure share, preview tables, and validate secure views.
+
+Part 4: Add consumers for the data share. This can be done by adding another account WITHIN that same region and giving it access to the share. If you try to add an account name not within the same exact region, you will get an error.
+
+Figure 4-13 shows the first screen of creating a secure data share within the Snowflake Data Cloud.
+
+Figure 4-13: Shares
+Larger View
+
+The form entries for a Snowflake data share are as follows:
+
+Secure Share Name: The name for the data share.
+
+Database: You select the database you plan to allow to be shared.
+
+Tables & Views: You select one or more tables and secure views (remember, regular views will not show up here).
+
+You can add consumer accounts afterward.
+
+Providing access to a share can be done either by adding existing accounts within the same exact region or by creating Reader Accounts. We will go into adding accounts in more depth in Chapter 14.
+
+Data Marketplace
+The Data Marketplace is one of the main reasons why Snowflake is much more than just a cloud database and is really the Snowflake Data Cloud. The Data Marketplace can be accessed through the Snowflake Classic Console by clicking the icon, but at this time you still need to reauthenticate because you are technically going to the Snowsight Preview App interface where the Data Marketplace is hosted. Figure 4-14 shows what the Data Marketplace Classic Console splash screen looks like now.
+
+Figure 4-14: Data Marketplace Splash Screen
+Larger View
+
+Once you click the “Explore the Snowflake Data Marketplace” button in Figure 4-14 and authenticate to the Snowflake Preview App, then you will be presented with the initial Data Marketplace Dashboard, which has listings of hundreds of Data Marketplace shares from hundreds of data providers. Figure 4-15 shows an example of the Data Marketplace initial interface. Also, remember that the Data Marketplace can be different from region to region right now. We also discuss the Snowflake Data Marketplace in depth in Chapter 14.
+
+Figure 4-15: Data Marketplace Listings Initial Screen
+Larger View
+
+In Figure 4-15 you can search for Data Marketplace shares based on provider name or share name or choose one of the Data Marketplace categories.
+
+Warehouses (Named “Compute Warehouses” on the Preview App)
+Warehouses are a new concept within the Snowflake Data Cloud, and they are technically virtual warehouses or really just pointers to compute resources within Snowflake and the cloud provider on top of which you are running Snowflake. You cannot execute SELECT, DELETE, UPDATE, INSERT, and MERGE statements without a warehouse assigned. If you are coming from a standard relational data warehousing background, then do NOT get confused by the naming convention Snowflake used here with “warehouses.” Snowflake warehouses are completely virtual pointers and have nothing whatsoever to do with the storage of the data. The Snowflake Data Cloud has a clear separation of storage from compute, and warehouses are the compute part of the Snowflake Data Cloud.
+
+Figure 4-16 shows the Create Warehouse form in the Classic Console on Snowflake.
+
+Figure 4-16: Warehouses
+Larger View
+
+The form entries required for the Snowflake warehouse are
+
+Name: The name of the warehouse.
+
+Size: This is one of the most important selections and has MASSIVE impacts on the cost of your Snowflake Data Cloud. The cost difference between the smallest warehouse of XS (extrasmall) and the largest of 6XL is significant.
+
+Maximum Clusters: (You will not see this line if you have the Snowflake Standard version). This value can range from 1 to 10 currently.
+
+Minimum Clusters: (You will not see this line if you have the Snowflake Standard version). This can range from 1 to 10 currently.
+
+Scaling Policy: Economy or Standard. This impacts how fast an additional cluster turns on.
+
+Auto Suspend: This is another incredibly important setting related to both cost and performance.
+
+Comment: It is important to add your comment on what this warehouse is created for.
+
+Worksheets
+If you use the web interface exclusively, then this will be your main working area. The most important part of the worksheets in both the Classic Console and the Preview App is the context selection. This greatly impacts what your worksheet syntax must be. If you are running a command that is not fully qualified with the DatabaseName.SchemaName.FinalObjectName, then Snowflake will use what you have defined within the context for your database and schema. Also, unless you change the warehouse setting in the context, then Snowflake will also use that warehouse to run the worksheet workload details and charge credits based on the warehouse size and other settings. The warehouse will resume and suspend based on the warehouse Auto Suspend and Auto Resume settings as well, which have significant impacts on usage costs. Figure 4-17 shows a blank worksheet tab with the context dropdown settings shown.
+
+Figure 4-17: Worksheets
+Larger View
+
+You will also notice on the Classic Console worksheet that the left navigation tree has both object exploration and search functionality. You can view the hierarchy of databases, schemas, and objects you have access to within the navigation tree. Remember that the navigation tree is dependent upon the current worksheet context that you are using. The worksheet has four main areas including the navigation tree, the worksheet input itself, the worksheet context (where you select Role, Warehouse, Database, and Schema), and the results pane. The results pane also has many options to view the query history or to copy or export data from the results. You can also access query profiles from here as well.
+
+Tip	
+The role you are using when you create an object in the worksheet has a large impact on what roles and users can view or use the object. It is incredibly easy to mistakenly create an object (table, view, schema, and even database) in the worksheet while being in the role of ACCOUNTADMIN and forget to grant ownership or visibility to another role that needs access. When someone states they cannot find some object that you know has been created, the first thing to troubleshoot is what roles have access to the object.
+
+History
+The History icon is one of my favorite initial features within the Snowflake Data Cloud. Many preexisting relational databases had history logs of every action that was taken, but the Snowflake Data Cloud database really was the first database I came across that was so transparent about providing full history of every action that took place easily (assuming you have the privileges to see the actions). Snowflake does control access to the query history so that only the users who have the proper role access can actually view the queries they have access to in the history log. This is also one way you can access query profiles related to any query run on your account that you have access to. Figure 4-18 shows an example history log on the Classic Console web interface. You can select a query profile by clicking the query ID within this interface. Query history is available for up to 14 days. If you need further query history, then you can query the Snowflake internal view named SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY.
+
+Figure 4-18: History (Very Cool)
+Larger View
+
+Partner Connect
+Partner Connect is another unique concept Snowflake came up with to showcase approved partner functionality and easily trial partner solutions. Figure 4-19 shows the initial top of the screen that you will see on the Partner Connect web interface. You can scroll down to find additional partners as well.
+
+Figure 4-19: Partner Connect
+Larger View
+
+Help
+Help is a key component of any technical system. Snowflake has a simple but useful selection of help links to four main areas including the Snowflake documentation, Snowflake Community, Downloads, and the Help Panel. Most of these are straightforward and make it easy to find help details on Snowflake. The Downloads section provides links and installation details on how to set up Snowflake connectors and tools including the CLI client, JDBC driver, ODBC driver, Python components, Node.js driver, Spark connector, Go Snowflake Driver, and SnowCD (the Snowflake Connectivity Diagnostic Tool). Figure 4-20 shows the top-level options available when you click the Snowflake Classic Console Help icon.
+
+Figure 4-20: Help Dropdown Screen
+Larger View
+
+Notifications
+Notifications ONLY provide notifications to ACCOUNTADMINS currently. These notifications are important for monitoring spend on virtual warehouses and are related to resource monitors. They should be one of the first things that are set up at the beginning of gaining access to your Snowflake Data Cloud system. I recommend setting up BOTH web and email notifications at first and immediately configuring resource monitors, which we will discuss later. Figure 4-21 shows the view when you hover on the Notifications icon. You must click the settings link in Figure 4-21 to get to Figure 4-22 where you can set the notification options.
+
+Figure 4-21: Initial Notifications Icon View
+Larger View
+
+Figure 4-22: Classic Console – Notification Preferences Screen
+Larger View
+
+Account
+When you click the Account icon, you are taken to a web page with eight standard options including Usage, Billing, Users, Roles, Policies, Sessions, Resource Monitors, and Reader Accounts.
+
+Tip	
+If you do not see the Account icon to the right of the History icon on the Classic Console, then you do not have rights to access the Account details with the current role you are in. Try changing the role to ACCOUNTADMIN if you have that access.
+
+Usage
+The Usage screen allows users to see their current daily compute spend and the spend breakdown by warehouses if the first rectangle with Warehouses and Credits Used is selected. Figure 4-23 shows what this warehouse spend view looks like on a new Snowflake Data Cloud account.
+
+Figure 4-23: Usage
+Larger View
+
+If you want to view storage usage, then you would click the rectangle just to the right of the “Warehouses and Credits Used” one, which is labeled “Average Storage Used.” This view breaks down storage by database, stage, and Fail Safe. Finally, you can view any data transfer costs by clicking the rectangle to the right of this named “Data Transfer.”
+
+Billing
+The Billing screen is where you can view and manage billing information for your account and add your credit card. This is typically used by on-demand accounts. Figure 4-24 displays an example of the Billing screen.
+
+Figure 4-24: Billing
+Larger View
+
+Roles
+Roles are a key part of how data is secured and accessed on the Snowflake Data Cloud. Users can only access functionality and data based on roles associated with them. Figure 4-25 shows the listing of standard roles that are set up initially on the Snowflake Data Cloud including ACCOUNTADMIN, ORGADMIN, PUBLIC, SECURITYADMIN, SYSADMIN, and USERADMIN.
+
+Figure 4-25: Roles
+Larger View
+
+Policies
+Policies in Snowflake are used for network security. Figure 4-26 shows an example of the Create Network Policy form. You can choose what IP addresses you want to allow and those you want to block. You can have multiple policies as well.
+
+Figure 4-26: Policies
+Larger View
+
+Sessions
+The Sessions link under the Account area allows you to see currently active sessions in your Snowflake Data Cloud account. The session listings include details on User Name, Session ID, Open, Start Time, End Time, Duration, Expiration Time, Client Driver, Client Net Address, and Authentication Method. Figure 4-27 shows the session display with two active sessions.
+
+Figure 4-27: Sessions
+Larger View
+
+Resource Monitors
+Resource monitors are one of the most important and often neglected features of the Snowflake Data Cloud. When on-prem users transition to the Snowflake Data Cloud, they often love the flexibility, ease of use, and unlimited scalability. Database practitioners who used on-prem databases must make a shift to using tools to monitor cloud consumption, storage, and other costs. Most on-prem databases just had fixed prices for their systems, but cloud databases typically have consumption pricing. The ONLY tool currently available by default on the Snowflake Data Cloud that monitors consumption and shuts off warehouses are resource monitors.
+
+Resource monitors can be used in two main ways to either notify Account Admins of hitting usage thresholds or to shut down the warehouse. One or multiple notifications can be set up. When a warehouse hits resource monitor thresholds, then it can either be suspended immediately or after the current query that went over the threshold finishes.
+
+Figure 4-28 is an example of the Create Resource Monitor form. You will notice you can set up resource monitors for one warehouse, multiple warehouses, and overall accounts. Also, warehouses currently can be set for monitoring intervals of Daily, Weekly, or Monthly.
+
+Figure 4-28: Resource Monitors
+Larger View
+
+Reader Accounts
+Reader Accounts are a type of account Snowflake created to allow data share providers a way to share their data with data consumers who do not have an existing Snowflake account. The main difference between a Reader Account and a normal Snowflake account is that the Reader Account consumption is paid for by the data provider. Also, the data provider is the one who creates the Reader Account. Figure 4-29 shows the standard form where you can create a Reader Account assuming you are currently using a role like ACCOUNTADMIN.
+
+Figure 4-29: Create Reader Accounts
+Larger View
+
+Reader Accounts make it incredibly easy for a data provider to share data to their customers who do not have an existing Snowflake account. You can easily set them up and share data within minutes. While they provide great ease of use and power, you must remember these are full Snowflake accounts that the primary account is paying the Snowflake costs for. You should never provide the administrative username and password to the reader party unless you have some agreement in place for the costs and administrative responsibilities. Otherwise, the best practice is to go in as the administrator username you just created and create roles with typically limited access specially to creating and using warehouses. We also recommend setting up resource monitors immediately so you can track all the usage effectively on the Reader Account.
+
+The Create Reader Account form on the Snowflake Classic Console shows the fields you need to fill out to create a Reader Account. The following are the field names and their descriptions:
+
+Account Name: Provide an account name for the new Reader Account that you [the primary account] will be paying the compute and storage for.
+
+Comments: Fill in details of what the Reader Account will be used for.
+
+Edition [this is set to what your current account is]
+
+Region [this is set to what your current account is]
+
+Admin Login Information: Create an administrative username and password for the Reader Account.
+
+Click the button “Create Account” to create the new Reader Account. Remember that Snowflake accounts now typically take a minute to get fully created. If you go to the account URL too early, you may see a 400 error.
+
+Once you are finished creating the Reader Account, make sure to set up the security as mentioned previously before giving access to the reader data consumers. Remember that all the usage performed on the Reader Account will be paid for by the primary account, which created the Reader Account. In Figure 4-30 you can see what the initial screen will look like for the new Reader Account.
+
+Figure 4-30: New Reader Account
+Larger View

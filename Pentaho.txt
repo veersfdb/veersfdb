@@ -1,0 +1,11 @@
+Pentaho is an end-to-end, data integration and analytics platform. Here, we provide guided tours of three aspects of the platform, complete with hands-on access to a full working environment.
+
+Pentaho Business Analytics
+Pentaho Data Integration
+Pentaho Metadata Injection (an advanced use case for Pentaho Data Integration).
+
+Pentaho Business Analytics: Evaluation (PBA1007S)
+Use this lab along with the course content to learn about the different Pentaho Business Analytics tools through hands-on experience.
+The OS user/password are: pentaho / password123
+For the best experience, use two monitors. One for your lab and one to watch the course content.
+

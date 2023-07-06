@@ -1,0 +1,26 @@
+-What is SQL and what is its purpose?
+SQL (Structured Query Language) is a programming language used to communicate with and manipulate databases. To get the most of the mounds of data they collect, many businesses must become versed in SQL.
+
+-Differentiate between SQL and NoSQL databases.
+
+-Explain the difference between the WHERE and HAVING clauses in SQL.
+
+-What are the different types of JOINs in SQL?
+
+-What is a subquery in SQL? one example
+
+-What is the difference between a primary key and a unique constraint?
+
+-How do you perform data manipulation (INSERT, UPDATE, DELETE) in SQL?
+
+-How can you retrieve the second highest salary from an employee table?
+
+-What is the purpose of the GROUP BY clause in SQL?
+
+-How do you eliminate duplicate rows from a result set in SQL?
+
+-Explain the concept of database normalization and its advantages.
+
+-How do you handle NULL values in SQL?
+
+-What is the difference between UNION and UNION ALL in SQL?

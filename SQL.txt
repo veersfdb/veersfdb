@@ -1,0 +1,132 @@
+7 most common SQL commands:
+SELECT - used to select specific columns from a table
+FROM - used to specify the table that contains the columns you are SELECT’ing
+WHERE - used to specify which rows to pick
+GROUP BY - used to group rows with similar values together
+HAVING - used to specify which groups to include, that were formed by the GROUP BY #clause
+ORDER BY - used to order the rows in the result set, either in ascending or descending
+LIMIT - used to limit the number of rows returned
+
+The 5 most common aggregate #functions used in SQL:
+AVG() - Return average value
+COUNT() - Returns number of rows
+MAX() - Return largest value
+MIN() - Returns the smallest value
+SUM() - Returns the sum
+
+4 different joins:
+INNER JOIN - combines rows from two tables that have matching values
+LEFT JOIN - combines rows from the left table, even if there are no matching values in the right table
+RIGHT #JOIN - combines rows from the right table, even if there are no matching values in the left table
+FULL JOIN - combines rows from both tables, regardless of whether there are matching values
+
+most common window functions for #SQL:
+RANK() - gives a rank to each row in a partition based on a specified column or value
+DENSE_RANK() - gives a rank to each row, but DOESN'T skip rank values
+ROW_NUMBER() - gives a unique integer to each row in a partition based on the order of the rows
+NTILE() - divides a partition into a specified number of groups, and gives a group number to each row
+LAG() - retrieves a value from a previous row in a partition based on a specified column or expression
+LEAD() - retrieves value from subsequent row in a partition based on specified column or expression
+NTH_VALUE() - retrieves the nth value in a partition
+
+1. 𝐋𝐞𝐚𝐫𝐧 𝐭𝐡𝐞 𝐛𝐚𝐬𝐢𝐜𝐬:
+- Primary Key vs Foreign Key
+- Data Types
+- Database diagrams
+- Tables
+- Records and Fields
+- Naming standards for tables and fields
+
+2. 𝐑𝐞𝐭𝐫𝐢𝐞𝐯𝐢𝐧𝐠 𝐃𝐚𝐭𝐚 𝐰𝐢𝐭𝐡 𝐒𝐄𝐋𝐄𝐂𝐓:
+- Learn how to write SELECT 𝘤𝘰𝘭𝘶𝘮𝘯(𝘴) FROM 𝘵𝘢𝘣𝘭𝘦
+- Combine with other keywords: WHERE, ORDER BY & LIMIT
+- Learn how to use arithmetic operators in SELECT statement
+- Retrieve unique values with DISTINCT keyword
+
+3. 𝐋𝐞𝐚𝐫𝐧 𝐭𝐨 𝐉𝐎𝐈𝐍 𝐭𝐚𝐛𝐥𝐞𝐬
+- Learn the four basic JOINS (INNER JOIN, FULL OUTER JOIN, LEFT JOIN, RIGHT JOIN)
+- Study the Venn Diagrams behind each type of JOIN
+- Understand relationship types (one-to-one, one-to-many, many-to-many)
+- JOIN multiple tables
+
+4. 𝐋𝐞𝐚𝐫𝐧 𝐃𝐚𝐭𝐚 𝐀𝐠𝐠𝐫𝐞𝐠𝐚𝐭𝐢𝐨𝐧 
+- GROUP BY statement
+- SUM, AVG, COUNT, MAX, MIN, ect....
+- Learn the difference between WHERE vs HAVING
+
+5. 𝐋𝐞𝐚𝐫𝐧 𝐦𝐨𝐫𝐞 𝐚𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐜𝐨𝐧𝐜𝐞𝐩𝐭𝐬
+- Learn how to use CASE-WHEN statement
+- Common Table Expressions (CTEs)
+- Write subqueries in SELECT, WHERE & FROM clauses to retrieve data based on condition or calculation
+- Write subqueries in tandem with Aggregate Fn
+
+1. Basic SQL Syntax:
+SQL keywords
+Data types
+Operators
+SQL statements (SELECT, INSERT, UPDATE, DELETE)
+2. Data Definition Language (DDL):
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+Truncate table
+3. Data Manipulation Language (DML):
+SELECT statement (SELECT, FROM, WHERE, ORDER BY, GROUP BY, HAVING, JOINs)
+INSERT statement
+UPDATE statement
+DELETE statement
+4. Aggregate Functions:
+SUM, AVG, COUNT, MIN, MAX
+GROUP BY clause
+HAVING clause
+5. Data Constraints:
+Primary Key
+Foreign Key
+Unique
+NOT NULL
+CHECK
+6. Joins:
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL OUTER JOIN
+Self Join
+Cross Join
+7 Subqueries:
+Types of subqueries (scalar, column, row, table)
+Nested subqueries
+Correlated subqueries
+8. Advanced SQL Functions:
+String functions (CONCAT, LENGTH, SUBSTRING, REPLACE, UPPER, LOWER)
+Date and time functions (DATE, TIME, TIMESTAMP, DATEPART, DATEADD)
+Numeric functions (ROUND, CEILING, FLOOR, ABS, MOD)
+Conditional functions
+9. Views:
+Creating views
+Modifying views
+Dropping views
+10. Indexes:
+Creating indexes
+Using indexes for query optimization
+11. Transactions:
+ACID properties
+Transaction management (BEGIN, COMMIT, ROLLBACK, SAVEPOINT)
+Transaction isolation levels
+12. Data Integrity and Security:
+Data integrity constraints (referential integrity, entity integrity)
+GRANT and REVOKE statements (granting and revoking permissions)
+Database security best practices
+13. Stored Procedures and Functions:
+Creating stored procedures
+Executing stored procedures
+Creating functions
+Using functions in queries
+14. Performance Optimization:
+Query optimization techniques (using indexes, optimizing joins, reducing subqueries)
+Performance tuning best practices
+15. Advanced SQL Concepts:
+Recursive queries
+Pivot and unpivot operations
+Window functions (Row_number, rank, dense_rank, lead & lag)
+CTEs (Common Table Expressions)
+Dynamic SQL

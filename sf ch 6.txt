@@ -1,0 +1,632 @@
+Chapter 6: Account Management
+Overview
+If you have already created your trial Snowflake account or have access to it with the elevated ACCOUNTADMIN privileges, you will first need to understand how you can protect your Snowflake account, as well as your expenses.
+
+As technology has progressed, so has the need for understanding and implementing good security practices, and while we will cover security in more detail later in this book, this will set the foundation as well as help you understand the available options and tools for managing and administering at the account level.
+
+Despite being a relative newcomer in a crowded field of database technologies, there is a surprising set of tools that come standard with Snowflake that will help the Account Administrator manage their environment to secure and protect it.
+
+In this chapter, we will cover the following topics:
+
+Traditional database administration
+
+The Snowflake Paradigm
+
+Risk mitigation
+
+Knobs, levers, and switches
+
+Security basics
+
+Monitoring your usage
+
+So let’s dig in.
+---------------------------------
+Traditional Database Administration
+Back in the good old days of saddles, spurs, ISAM, and indexed relational database management systems (RDBMSs), databases were highly technical and specialized tools that required a lot of knowledge and experience to get the most out of them.
+
+For example, here is a list of things traditional database administrators must know:
+
+Networking: Diagnosing network connectivity issues between users, database servers, application servers, authentication systems, and backup systems; opening ports in firewalls; checking latency; etc.
+
+How to securely authenticate users according to corporate security policies using the tools provided by the database platform
+
+How objects were going to be stored, including which physical devices would be mapped to logical devices and which specific RAID levels would be needed, depending on how critical the data was vs. the needed performance
+
+Which parameters needed to be set and what settings were appropriate
+
+How to secure and protect the database against hackers as well as human error
+
+Planning for business continuity and disaster recovery
+
+Enabling databases to “scale” by adding more storage and servers, which were dependent on what was available in the data center and, if adding new servers was going to happen, how long would it take to get those new servers installed and configured – as long as 6 months depending on hardware availability
+
+Finding employees who had all of these skills was a difficult proposition, and when you did find them, they were very expensive to hire. And, if you accidentally hired someone who was weak in any area, it could mean disaster with extended downtimes, potential for loss of data, and poorly performing databases that did not adequately provide for growth, not to mention lots of very unhappy users.
+
+In short, databases were hard. Very hard.
+
+This also meant that highly experienced employees who had all the necessary skills to manage these databases were also expensive.
+
+I was once asked this question in an interview for a position managing a very expensive traditional (not Snowflake) RDBMS platform: “If you could change anything about the platform and its technology, what would that be?”
+
+I didn’t even have to think through the answer, and I responded: “I would make it more complicated.”
+
+They looked at me incredulously and asked: “Why on earth would you want to make it more complicated?”
+
+I again responded right away with: “Because I could make more money.”
+
+The moral of this story is that complicated systems require extensive knowledge to support, and therefore it becomes harder to find qualified individuals, as those salaries will be considerably higher to lure them away from their already lucrative positions.
+
+So not only are traditional databases very hard to support, they are also very expensive to support, not only for the support contracts needed from the vendor but also for finding highly qualified personnel to help manage them.
+----------------------------------------------------------------------------------------------------------------------------
+The Snowflake Paradigm
+The people who built the Snowflake database platform knew all too well the pain points of database administrators, having worked for one of the largest and most respected database vendors on the planet: Oracle.
+
+They knew firsthand all the challenges listed previously and wanted to build something that was already secure but also easy to manage.
+
+They understood that in order to be successful, the key was not in making databases complicated and hard, but rather making them easy to use and manage.
+
+This meant that the traditional model would need to be thrown out and a new method of administering the database needed to be created. One of the ways they did this was leveraging the automation made available within cloud environments, through the various storage and compute cluster resources offered.
+
+In the cloud, they could automate a lot of the tedious administration tasks to quickly and easily deploy and scale their offerings to enable companies to face their challenges and overcome them without the lengthy planning and hardware lead times and become much more agile in the process.
+-------------------------------------------------------------------------------
+Risk Mitigation
+If you will be administering and managing security within a Snowflake database, you need to be aware of the risks involved and how to avoid them.
+
+As administrators, part of the job is protecting and securing the environment against
+
+Data loss
+
+Hardware failures
+
+Outside threats (e.g., hackers)
+
+It’s our job to do everything in our power to ensure that the data is always available, in our control, and out of the hands of those who are not allowed to get hold of it.
+
+There are lots of tools provided by Snowflake to make it easier to lock things down, but first, let me share a list of potential risks:
+
+Users with insecure passwords
+
+Using the same password for both work and personal accounts
+
+Using the same password for both your bank and personal accounts, such as email
+
+Leaving network ports open, allowing foreign network access
+
+Oversharing on social media
+
+Giving out information without vetting the person requesting it
+
+Co-workers sharing passwords for the sake of convenience
+
+Sending people’s private and confidential information via email using “Reply All”
+
+Clicking unverified links in emails, or the email addresses themselves
+
+Leaving your laptop, tablet or phone, or other device unlocked and unattended
+
+Leaving room for someone to see your screen and read over your shoulder
+
+Surfing non-work-related websites on a company-provided device
+
+Leaving your laptop visible in an unlocked vehicle with the keys on the dash
+
+I could go on forever, but you get the idea.
+
+If you can imagine a threat, there’s a high probability that it can be prevented fairly easily.
+
+The job of the administrator is to imagine the worst and then plan for it.
+------------------------------------------------------------
+Knobs, Levers, and Switches
+In the old movies portraying mad scientists, they would show them frantically turning knobs, throwing levers, and moving switches. This gave an impression of a series of complicated actions that would undoubtedly result in something bad happening, leading to some monster being created and unleashed on an unsuspecting public.
+
+Those knobs, levers, and switches represented different aspects of control, all working together to produce a specific result.
+
+Databases have their own sort of knobs, levers, and switches, and these are called parameters. Each database platform has a number of different parameters, each able to have two or more different values that can be used, each with a specific purpose.
+
+The last I checked, Oracle has well over 300 parameters that can be adjusted to affect how an Oracle database works.
+
+By comparison, Snowflake has – as of this writing – less than 70, with about one-third of them pertaining to date and time formatting options.
+
+You can find a complete list of these parameters on Snowflake’s website:
+
+https://docs.snowflake.com/en/sql-reference/parameters.html
+
+Parameters fall into three categories:
+
+Account Parameters: Global and high-level parameters that control account security, objects, and user sessions
+
+Object Parameters: Affecting databases, schemas, tables, and other objects’ behavior
+
+Session Parameters: User-modifiable settings controlling formatting, collating, caching, and result management
+
+If you have access to your Snowflake database, whether you have the ACCOUNTADMIN role or a lower role, you can see some, if not all, the parameters, using the following command:
+
+SHOW PARAMETERS;
+This will show each parameter, with its name, current value, and default value, and may also show a brief description of what that parameter controls.
+
+Typically, parameters can be set at the account or object level and, in certain cases, can be overridden by a user session to allow different handling of the data from what might have been set at a higher level.
+
+For now, we will focus on those parameters that affect the Snowflake account. Other types of parameters will be addressed in chapters dedicated to their specific needs.
+
+Account parameters fall into the following categories:
+
+Security
+
+Data handling
+
+Date and time
+
+While we’ll be tackling the topic of security in more detail later on, for now we’ll just take a look at a few important parameters to consider regarding security.
+
+NETWORK_POLICY
+This parameter is responsible for defining which IP addresses are allowed to connect to the Snowflake account.
+
+While this particular parameter will not be very helpful for someone with a trial account who is connecting to Snowflake through their home Internet provider, where their IP address is changing dynamically, it is VERY important for companies where IP addresses are static – meaning they don’t generally change.
+
+The chapter that focuses on security will go into more detail, so for now, consider this parameter as being responsible for providing Snowflake with a built-in firewall for protecting the account.
+
+PERIODIC_DATA_REKEYING
+This parameter is much less complicated than NETWORK_POLICY in that it only accepts BOOLEAN (meaning true or false, 1 or 0, on or off, etc.) values.
+
+The default is FALSE, but when set to TRUE, Snowflake will rotate the encryption keys annually and ensure that retired keys are destroyed once they are no longer needed.
+
+While we will address encryption in more detail later on, we are generally in favor of anything that enhances the security of our systems and therefore recommend setting this value to TRUE.
+
+This can be done using the following SQL:
+
+ALTER ACCOUNT SET PERIODIC_DATA_REKEYING = TRUE;
+It can be set back to FALSE at any time, but keep in mind that once encryption keys have been destroyed, they cannot be brought back and used again.
+
+Since the keys are rotated on a regular basis, this should not be an issue since those old keys would no longer be applicable.
+
+QUOTED_IDENTIFIERS_IGNORE_CASE
+If you have ever worked with Unix, you may be acutely aware of how case sensitivity of text can impact files and processing, because while to humans the words Text and text may look the same, in some operating systems, the difference is significant.
+
+Likewise, in some RDBMS platforms, case sensitivity can also impact the interpretation of object names.
+
+A very common example is Microsoft SQL Server, where an object named “[Table].[Column]” is completely different from “[Table].[column]”.
+
+Except in SQL Server, you can refer to “TABLE.COLUMN” (note that we are using all uppercase AND have dropped the square brackets), which could be understood to mean either “[Table].[Column]” or “[Table].[column]”.
+
+Snowflake however is much more literal when it comes to case sensitivity.
+
+If you specify that a column is named ‘Object’ within single quotes, Snowflake will take that to mean that the column must use that exact case for any future references, so that if you query the OBJECT column, Snowflake will generate an error saying that the column does not exist or that you don’t have the necessary permissions to see it.
+
+If your company typically references columns using a variety of case handling (e.g., first letter capitalized, all caps, or even “camel case,” where one letter near the middle of the name is uppercase, e.g., “myObject”), then you might consider using the QUOTED_IDENTIFIERS_IGNORE_CASE parameter.
+
+This parameter is Boolean too and tells Snowflake to basically relax and not take life so seriously.
+
+The net effect is that Snowflake will not be so specific when it comes to quoted object names and allow referencing them in any style of case handling you choose.
+
+The drawback however is that if you have columns that are similarly named, “Object” and “OBJECT”, for example, it could be confusing and Snowflake may not know which object you are referring to.
+
+To take advantage of this parameter, use the command
+
+ALTER ACCOUNT
+SET QUOTED_IDENTIFIERS_IGNORE_CASE = TRUE;
+Note also that this can be set not only at the account level but also for individual sessions, where newly created objects will ignore case-sensitive references to names, as well as in queries.
+
+However, if setting at the account level, it will only affect objects created from that point forward or until the parameter is subsequently disabled.
+
+Unless your company is migrating from SQL Server and depends on this case sensitivity for its object identifiers in reports and other data processing, our recommendation is to set this parameter to a value of “TRUE”.
+
+Otherwise, you may want to set this value to “FALSE”.
+
+PREVENT_UNLOAD_TO_INLINE_URL, REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_CREATION, and REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATION
+When it comes to loading and unloading data, there are a few ways this can be accomplished within the Snowflake environment.
+
+While we will cover data loading and unloading later on, these particular parameters specifically address the security related to these types of data ingestion and storage management.
+
+When data is loaded or unloaded to or from Snowflake, it is always sent to or pulled from staging areas in the cloud storage layer, which can be specified in a number of ways.
+
+These three parameters specifically control whether or not users are allowed to load or unload data directly using S3 locations that are not using a storage definition known as a Storage Integration.
+
+The ACCOUNTADMIN role is able to create Storage Integrations, secured with hidden authentication parameters, to provide a simple name for referencing these locations, rather than lengthy IDs and all the parameters that go with them.
+
+These parameters force users to use these Storage Integrations and prevent them from using their own personal cloud storage locations, ensuring data is contained within the companies’ digital borders at all times.
+
+SAML_IDENTITY_PROVIDER and SSO_LOGIN_PAGE
+These parameters are specific to Single Sign-On authentication, which allows users to leverage their corporate identity authentication infrastructure for allowing them access based on their network ID and authentication, whether it is a password or token-based system.
+
+Typically, the ACCOUNTADMIN will work with the identity management team – the ones responsible for managing the infrastructure that provides authentication to all the systems in the company – for configuring this information.
+
+These settings will be covered in more detail later on, but keep them in mind as we will come back to visit them when the time comes.
+----------------------------------
+Security Administration
+An important aspect – if not THE MOST important aspect – of account management is security.
+
+The ACCOUNTADMIN role has the most responsibility in any Snowflake account, and it should not be any surprise that security falls directly into the lap of the Account Administrator.
+
+There are a number of areas that the administrator should fully understand and take complete control over, and there are some that will only have minor tasks involved. They are
+
+Network protection
+
+Single Sign-On
+
+Data protection
+
+User login management
+
+Of all of these, the least important – at least for the ACCOUNTADMIN – is user login management, which is really the responsibility of the SECURITYADMIN and USERADMIN roles, which will be discussed in greater detail in the next chapter on security.
+
+For now, let’s explore the first three options listed.
+
+Network Protection
+We touched on network protection in the previous section, with the NETWORK_POLICY parameter.
+
+However, network protection is much more than just setting up a firewall.
+
+Before we dig into those other aspects of this topic, let’s look a little more closely at the NETWORK_POLICY parameter.
+
+NETWORK_POLICY
+As we mentioned previously, this parameter controls who can and cannot connect to the Snowflake account by explicitly defining IP addresses, much like a firewall does.
+
+The IP addresses are expressed as a list of string literals, for example:
+
+(‘10.1.0.1’,’10.1.0.2’)
+
+While the preceding example sets two IP addresses as being allowed to connect, it will usually not be useful to specify every single IP address. That would be tedious, particularly in larger organizations where lots of users and server clusters may need access.
+
+Instead, it may be more useful to define a list of ranges, using CIDR (Classless Inter-Domain Routing) IP address range specifications, which allow specifying ranges of IP addresses using a short-form notation.
+
+Unless you are on the network team for your company, you won’t likely need to know the specific CIDR ranges that will be needed for your particular Snowflake deployment, but the network team will be able to provide the list of CIDR ranges and specific IP addresses on request using whatever communication tools they allow.
+
+We will cover this topic in more detail in Chapter 7, when we discuss the topic of security in more detail.
+
+Single Sign-On
+You may have heard of this term before, as it is typically found in many corporate authentication systems.
+
+It is a method of user verification that often relies on infrastructure using a combination of identity management tools to confirm that users are allowed to connect.
+
+Snowflake is able to communicate with the more common methods of infrastructure authentication systems, such as Microsoft's Active Directory (also referred to as AD), Okta, Duo, and many others.
+
+As long as the authentication system is SAML 2.0 compliant, the chances are very good that it can be used as the gateway for user access instead of passwords.
+
+Because the ACCOUNTADMIN role is responsible for all security for their Snowflake account, it is their responsibility to work with corporate data security teams to configure Snowflake to work with their systems.
+
+Data Protection
+Another aspect of account management is doing what we can to protect the data from prying eyes.
+
+Typically, database vendors would offer things like SSL connection options, encryption through expensive high-security packages, proprietary storage schemes, etc.
+
+But with Snowflake, all data is encrypted all the time, whether in motion or at rest. In fact, it cannot store data in clear text at all.
+
+However, there are certain things that an ACCOUNTADMIN can do that can be leveraged to enhance and strengthen the protection of the data stored in the database.
+
+Here are a few things that can be done to help make the database as bulletproof as possible:
+
+Parameters
+
+Encryption
+
+Storage Integration
+
+We covered a number of parameters in the preceding section pertaining to security, and it should be no secret by now that these are an easy way to help secure the account.
+
+When it comes to encryption however, there is one area that Snowflake does not control, where encryption might not be configured: External (client-provided) Stages.
+
+These stage areas are fully able to hold encrypted data, but the customer has the sole responsibility for protecting this data.
+
+While it should already be protected by private encrypted keys, that may not be sufficient to please the data security team in your company, who may feel rather strongly about putting critical data “in the clear” (which means it can be read easily without any conversion) in cloud storage areas.
+
+The way to keep them happy is to encrypt the data before it is written to cloud storage.
+
+Encrypting data requires two things:
+
+The data to be encrypted
+
+A pair of encryption keys for scrambling the data
+
+The “private key” is the master key, which is used to both encrypt and decrypt the data, while the “public key” is given to Snowflake (stored securely in Snowflake’s encrypted system), which can decrypt the data.
+
+When Snowflake pulls the encrypted files out of the cloud storage – still encrypted – it then holds them temporarily in memory, decrypts the data on the fly, and re-encrypts it with its own highly secure composite encryption key (basically several keys combined to make a superstrong key), before it writes the newly encrypted data to its own storage area.
+
+And speaking of External Stages, ACCOUNTADMINs can create Storage Integrations that have authentication keys and cloud storage URLs associated with them, to make pulling data from external cloud storage accounts both easier and more secure.
+
+The key to the Storage Integration is it simplifies the processes for loading and unloading data to and from cloud storage, because referring to a location using a simple name is much easier rather than having to include a bunch of parameters that are usually needed for both identifying and authenticating connections to a customer’s cloud storage area.
+
+When these parameters are used instead of a Storage Integration, whoever has this information could use it to load or unload data to or from that location, which is not considered to be a safe and secure practice. For example, having that information “in the clear,” a user could email themselves that information and use it from their home computer to upload and/or download data, to use however they please – which tends to make data security teams cranky.
+
+But when the location and credentials are given a name whose details are only known to the ACCOUNTADMIN, suddenly users no longer have unrestricted access to the location and can no longer copy the location and authentication information to use on their own, for their own purposes.
+
+And to help further secure the database, the parameters we discussed in the section “Knobs, Levers, and Switches”
+
+PREVENT_UNLOAD_TO_INLINE_URL
+
+REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_CREATION
+
+REQUIRE_STORAGE_INTEGRATION_FOR_STAGE_OPERATION
+
+can all be used together to further strengthen and enforce the use of Storage Integration objects for loading and unloading data.
+
+User Login Management
+For most RDBMS platforms, databases exist to enable users to access data, to generate insights and understanding that is not necessarily clearly available.
+
+We use SQL queries, reporting, dashboards, and analytics to pull information from the database, which means somebody must be consuming this information, which is often available as “self-serve,” meaning users can log in to get access and run those reports or queries to gain the perspectives they need to help their company be competitive in the marketplace.
+
+To enable those users to have access, we therefore need to have a way that we can give those users a unique and secure method of communicating with the Snowflake account. This is done through “logins.”
+
+Notice we don’t call it an “account,” as this might be confused with the overall Snowflake account that the company has purchased.
+
+Logins provide a unique identity for users and can have attributes assigned to them to facilitate communication and permissions for accessing data and performing queries or other actions on data.
+
+But it’s important to realize that to be safe, we need to know how to reach a user in case of trouble.
+
+For example, in a Snowflake account that I help manage and where I have the ACCOUNTADMIN role assigned to me, I discovered that a user had done something – probably not maliciously but rather by accident – that caused a warehouse to run constantly without automatically shutting down.
+
+However, when the user’s login was created, there were no additional attributes available to help identify who they were, and as such, we were unable to locate them.
+
+We strongly recommend including the following attributes when creating new logins in your company’s Snowflake account:
+
+First name
+
+Last name
+
+Email address
+
+Comment, which can include additional info such as phone number, corporate LAN (or network) ID, IM username, etc.
+
+Now, when you first set up your Snowflake account, you will be given an ACCOUNTADMIN login by Snowflake that can be used for the initial access.
+
+That login can be used not only for setting parameters, creating Storage Integrations, etc. but also for creating database logins.
+
+Before any of those other items are done, it is strongly recommended that you create one or two logins for those people who will have the most responsibility for managing security and usage of the account.
+
+Once they have been created, you can then grant them the ACCOUNTADMIN role, and those individuals should log in, immediately change their password from the default, and set up multi-factor authentication, also known as MFA.
+
+Adding MFA to the login process adds an additional layer of security to the authentication process, which is important given the level of responsibility they will be carrying in regard to this database.
+
+The strongest methods of security incorporate several factors that represent the individual in such a way as to make impersonating that user effectively impossible.
+
+Separation of Duties
+As was mentioned earlier, one of the things the ACCOUNTADMIN role allows is creating logins for other users of the Snowflake account.
+
+The ACCOUNTADMIN has a lot of other responsibilities though, and when you have a lot of users having access to the database, invariably people can forget their passwords or lock themselves out of their login.
+
+Enter the SECURITYADMIN role.
+
+The only job of the SECURITYADMIN is to create other roles and logins and grant permissions to roles, as well as granting roles to logins.
+
+There is also another role called the USERADMIN, which allows creating and managing logins.
+
+It is strongly recommended that the only logins that the ACCOUNTADMIN creates are for the SECURITYADMIN and USERADMIN roles.
+
+Once those logins have been created, then it will be the responsibility of the SECURITYADMIN and the USERADMIN to maintain the user logins and roles.
+
+Only the role that creates a user login can change it.
+
+This means that if the ACCOUNTADMIN tries to be helpful and creates a user login – perhaps the SECURITYADMIN and USERADMIN are out at lunch – then later when that user forgets their password, the SECURITYADMIN and USERADMIN will not be able to help the user regain their access, because the login was created by the ACCOUNTADMIN. Only now, the ACCOUNTADMIN is out to lunch or, worse, on vacation relaxing on a beach somewhere with no Internet access!
+
+It is because of situations like this that we have something called “separation of duties.” Now this applies to many other areas of IT, not just Snowflake login management, but it demonstrates that it’s important to allow users with the appropriate responsibilities to do their jobs without interference or shortcutting defined processes and escalation trees. If the SECURITYADMIN and USERADMIN are out to lunch, the employee needing their access will have to wait until they get back.
+----------------------------------------------------
+Monitoring Your Usage
+Another responsibility of the ACCOUNTADMIN is monitoring utilization within the Snowflake account.
+
+This includes
+
+Storage consumption costs
+
+Warehouse credit consumption costs
+
+Replication and cloud compute consumption costs
+
+Ad hoc query monitoring
+
+It costs money to run a business.
+
+The larger the business, the more expensive it gets to hire people and set up the infrastructure that supports them, and there are costs involved for every part of that universe of systems and applications.
+
+For example, a lot of companies love MySQL or MariaDB because it is open source and can be used without having to pay the high licensing costs of tools like Oracle and Teradata.
+
+But it’s not free, because the hardware – or cloud resources – still costs money to stand up, not to mention support licenses and the skilled personnel who know how to get the most out of it, how to best secure it, how to set up replication, etc.
+
+Those tools are not optimized for the kind of scalability it takes to run a data warehouse like Snowflake, and piecing together all the components needed to make it work like Snowflake would be VERY expensive, not to mention the risk of implementing an untried system for production use.
+
+Most database vendors provide tools – or ways – to track costs and expenses related to managing their platforms, and Snowflake is no exception.
+
+There are two primary areas where money is spent with Snowflake accounts:
+
+Storage utilization
+
+Compute cluster utilization
+
+Snowflake does not add on subscription fees, account management fees, user seat license fees, special option or feature package fees, etc.
+
+Instead, based on the edition chosen, the organization that subscribes to Snowflake will pay based on the number of terabytes of storage used, as well as the number of compute node credits consumed, the latter of which depend on the size of the compute cluster chosen.
+
+We won’t go into the specific costs of compute clusters right now, but you can look forward to seeing this topic discussed in much more detail in the chapter that focuses on this subject.
+
+However, it’s only fair to be able to see and control – to a certain degree – how these expenses are incurred.
+
+There are two tools provided that assist with this:
+
+ACCOUNTADMIN dashboard
+
+Resource monitors
+
+The dashboard provides a view into the storage and compute cluster consumption of the organization, through graphical representations like pie charts and bar charts.
+
+These charts can be filtered with date ranges so you can see where and when the bulk of the expenses have been occurring.
+
+If you are currently logged into the ACCOUNTADMIN role, you can click the “Account” tab near the top of the Snowflake web UI page and then click the leftmost topic titled “Billing and Usage.”
+
+On this page are several areas where you can see what the consumption has been for warehouses, or you can change the view to see what the storage consumption has been for the various databases contained in the account.
+
+By hovering over sections of the pie chart, for example, you can see the exact usage for the warehouses involved for the current period.
+
+Likewise, you can filter these pages by date or see trends using the various perspectives offered.
+
+Typically in Snowflake, database storage utilization expenses are relatively lower when compared with the compute cluster resources involved in maintaining the database.
+
+Storage Costs
+If you have already been monitoring your Snowflake account and know how much data has been loaded vs. how much is being stored in its compressed format, you can calculate the compression ratio and apply that to expected future growth to estimate future storage costs and utilization trends.
+
+With this information, you can have an understanding of how much storage will be needed month to month and score discounts on future storage by committing to purchase that storage in advance.
+
+In addition, you can also create your own custom queries to build your own perspective based on your organization's needs, using SQL and the new Snowsight dashboard system.
+
+Now, that’s all fine and good, but didn’t we just say that compute clusters are more expensive than the storage component in the Snowflake architecture? Yes, that’s correct. As a matter of fact we did.
+
+So let’s look at how we can manage those costs next.
+
+Compute Cluster Costs
+In any database platform, there is one area that is difficult to predict and protect against: the rogue SQL query.
+
+This wouldn’t necessarily have to be a big query in and of itself, but if it is written inefficiently, perhaps joining two huge tables on a calculated column, for example, this could potentially bring virtually any platform to its knees, and the database administrator’s inbox would suddenly be filling with complaints and their phone would start ringing off the hook.
+
+This can also affect Snowflake, but fortunately there are tools we can use to prevent this kind of thing from impacting other users, such as separating workloads to their own isolated warehouses, enabling automatic scale-out, etc.
+
+But adding workloads and automatic scale-out are not going to keep those costs down… They will only minimize the number of calls the ACCOUNTADMIN receives, usually just for the person who wonders why their query is taking so long.
+
+So what can we do to minimize our compute cluster consumption expenses? There are a couple of things we can do:
+
+Parameters
+
+Resource monitors
+
+Parameters
+There are parameters that can control the behavior of SQL queries and parameters that can control the behavior of the warehouses themselves.
+
+These parameters are as follows:
+
+ABORT_DETACHED_QUERY
+
+STATEMENT_TIMEOUT_IN_SECONDS
+
+USE_CACHED_RESULT
+
+ABORT_DETACHED_QUERY
+This Boolean parameter controls how queries are handled if the connection to the login session is lost.
+
+If the value is left as the default “FALSE”, then queries will continue to run if the session connection is lost.
+
+But if the value is changed to “TRUE”, then if the connection is lost, the query is aborted after 5 minutes.
+
+This is beneficial because it ensures that the system does not spend extra compute time on results that cannot be delivered to a user session that is no longer available, assuming data was being queried of course.
+
+This parameter can be set at the account level or at the user session level.
+
+STATEMENT_TIMEOUT_IN_SECONDS
+This parameter uses the number of seconds provided to determine if the query is “running long” and needs to be stopped immediately.
+
+The default value is 172,800 seconds, or two days, which may or may not be appropriate for the workload being processed.
+
+This parameter can be applied at the account, warehouse, or user session level.
+
+We recommend applying this parameter to warehouses, with a value that is reasonable for the work being performed.
+
+For example, certain data loading processes may take a long time to get all the data loaded and in fact might be constantly loading data using a small warehouse 24 × 7, while an analyst working in an appropriately sized warehouse may not need more than 5 minutes to run their queries.
+
+Therefore, it’s important to test a broad variety of queries before setting this parameter, but we’ll talk more about this topic in the chapter devoted to warehouses.
+
+For now, if your Snowflake account is just getting up and running, we recommend starting with a smaller value, like 5 minutes, until you have a good sense of timing and scaling required for each of the workloads that the account will be handling.
+
+You can always increase it later as needed, but remember that this parameter should be set to a number that represents seconds, not minutes or hours.
+
+USE_CACHED_RESULT
+This parameter controls whether or not the results of prior queries are reused for subsequent executions instead of being executed again, consuming credits by the chosen warehouse.
+
+The default for this parameter is “TRUE” fortunately, which means that typically – unless changed – a query will return the same cached value that was returned the last time this query was ran, even if it was run by someone else, instead of consuming even more credits each time.
+
+It can be set at the account, user, or session level and, if needed, could be changed to a value of “FALSE”, which means that every time a query is run under this setting, a warehouse will be consuming credits and incurring charges.
+
+Keep in mind too that just because this parameter defaults to “TRUE” does not ensure that it will use the cached results, because if the underlying data changed, it will cause Snowflake to recompute the results, incurring charges as a result.
+
+Therefore, use this parameter with care, to make sure it is appropriate for the workloads it affects.
+
+Resource Monitors
+A resource monitor is a tool that allows the ACCOUNTADMIN role the ability to set thresholds for monitoring, along with predefined actions to be taken when each threshold is crossed.
+
+You can see if there are any resource monitors defined using the command
+
+SHOW RESOURCE MONITORS;
+A resource monitor has one or more thresholds defined in terms of a budget of credits that the warehouse is allowed to consume, using a maximum credit value combined with percentages for each threshold.
+
+For example, suppose you want to set a budget of 400 credits per month for a warehouse and you want to be alerted when it crosses the 50%, 85%, and 90% thresholds.
+
+Before you can set those thresholds for a specific warehouse, you must first create the resource monitor to specify that budget and the named threshold percentages, like so:
+
+CREATE RESOURCE MONITOR query_monitor
+WITH CREDIT QUOTA = 400
+FREQUENCY = MONTHLY TRIGGERS
+ON 50 PERCENT DO NOTIFY
+ON 85 PERCENT DO NOTIFY
+ON 90 PERCENT DO NOTIFY;
+The preceding SQL will allow an ACCOUNTADMIN to receive a notification whenever the QUERY_MONITOR resource monitor crossed a threshold.
+
+So, when 200 credits have been used within a given month, a notification will be sent. Likewise, when 300 credits have been consumed, another alert goes out, and so on.
+
+Now, if money is tight and budgets have to be adhered to, additional thresholds could be included to tell the warehouse to suspend operations or to even shut down immediately.
+
+To do this, you could use the following SQL:
+
+CREATE RESOURCE MONITOR query_monitor
+WITH CREDIT QUOTA = 400
+FREQUENCY = MONTHLY TRIGGERS
+ON 50 PERCENT DO NOTIFY
+ON 85 PERCENT DO NOTIFY
+ON 90 PERCENT DO NOTIFY
+ON 95 PERCENT DO SUSPEND
+ON 99 PERCENT DO SUSPEND_IMMEDIATE;
+You might have noticed we did not include thresholds for notification at 95% and 99%. This is because Snowflake will automatically send notifications on those types of actions.
+
+Once a resource monitor has been defined, it can then be applied to a new warehouse, using
+
+CREATE WAREHOUSE my_warehouse WAREHOUSE_SIZE = SMALL RESOURCE_MONITOR = ' query_monitor';
+Or, to apply the resource monitor to an existing warehouse, use
+
+ALTER WAREHOUSE my_warehouse
+SET RESOURCE_MONITOR = 'query_monitor';
+Now, suppose activity is high and the warehouse consumes 380 credits during the month, will this cause suspension of the warehouse since 95% of the budget has been consumed?
+
+The warehouse will be suspended, and any new queries launched will wait in their respective queue until the resource monitor is changed to increase the budget allowed.
+
+If any queries are in flight when the warehouse is suspended, they will be allowed to continue executing – and incurring charges – until they have either finished and returned their results OR until 396 credits have been consumed, which equates to the 99% threshold defined for the specified budget, at which time ALL queries running in that warehouse are aborted immediately and no further queries can be run until the budget is increased.
+
+Keep in mind that the preceding examples are only to show different ways of using resource monitors. In fact, thresholds don’t have to be limited to 100% but rather could be virtually ANY percentage that makes sense for your organization.
+
+You might be wondering to yourself, why not set the budget to 100% before aborting?
+
+This is because those defined percentages are not a hard limit, meaning that a few fractions of a credit could continue to be consumed while the warehouse is shutting down, and by setting the threshold to 99%, it gives us time to allow the warehouse to suspend before we hit the full budget we defined, particularly since this example was for a use case where our budget was tight and we wanted to make sure we stayed within the defined budget.
+
+If this is a new deployment of Snowflake and you are just getting your feet wet, it might be worth setting up resource monitors with shorter frequencies, with perhaps a DAILY reset, so that if a budget for a particular day is hit, it can reset overnight and users can continue to work the next day.
+
+While they wait, you can take some time to understand why the threshold was crossed, by investigating which users were using the impacted warehouse and diagnosing their queries to see if there might be inefficiencies in their structure that might have caused too many credits to be consumed.
+
+It is recommended that at a minimum, one resource monitor be created for the Snowflake account and at least one for warehouses. This way, if a warehouse is missing a resource monitor, it can be caught by the account-level resource monitor, just in case.
+
+Replication and Cloud Compute Costs
+Although resource monitors are great for monitoring warehouses, there are other costs that can be incurred, specifically those called “cloud compute” resources.
+
+These resources happen behind the scenes, for certain activities managed by the cloud services layer, where Snowflake has some additional work to be done, such as maintaining materialized views or managing replication between accounts.
+
+Visibility into this type of consumption can be found in the Account tab, along with the warehouse Billing and Usage charts, but can also be queried from the ACCOUNT_USAGE schema to get more detail on the underlying utilization.
+
+Ad Hoc Query Monitoring
+Finally, no discussion on monitoring would be complete without addressing how to discover what queries are doing up to the moment.
+
+One of the tabs available in the Snowflake web UI is the “History” tab, which can display query activity along with some details like which role is running the query, which warehouse the query is running under, how long the query has been running, etc.
+
+High-performing queries may only be a temporary blip in this window and quickly disappear with more queries taking their place, while other queries may take some time to finish.
+
+If you have effectively separated your workloads to different warehouses to reduce queuing and workload impacts, you may still want to watch out for long-running queries or queries that have failed, such as timing out, thanks to the STATEMENT_TIMEOUT_IN_SECONDS parameter.
+
+You can sort the results by various columns or even filter your results to eliminate queries that are of no interest, in order to narrow the list of results.
+
+Using these methods, you can quickly see which queries are using specific warehouses and which are still running, and if you find one that concerns you, you can even click its query ID to find out more details about the query and how the query optimizer is executing it.
+
+You may find opportunities for improving the performance of a query by rewriting it for efficiency or discover that the query is performing a full table scan because the columns being joined are non-deterministic.
+
+Regardless, the History tab allows not only users but also the ACCOUNTADMIN to see what is actively and currently happening in the database to discover ad hoc opportunities for improvement.
+----------------------------------------------------------------------------
+Summary
+Account management carries a lot of responsibility, not only for the security of the account and protection of the data but also for managing the expenses to a defined budget.
+
+There are quite a few tools provided by Snowflake to make this easier, from parameters, Single Sign-On and MFA, network firewalls, and encryption to tools for monitoring resource consumption and expenses.
+
+Always look to manage the account in such a way that security comes first, but there is more to the role of ACCOUNTADMIN than just security.
+
+They also need to monitor the account as well as warehouses to ensure they are being used appropriately and effectively for separate workloads.
+
+Finally, don’t just monitor for credit consumption costs, but also find ways to keep track of cloud compute expenses, as well as user queries that might have opportunities for improvement.

@@ -1,0 +1,15 @@
+developement-SAST:static application security test
+deployment-DAST:
+product management-Pen test
+obsolescence-SCA
+Open Web Application Security project-OWASP top 10
+A1 Injection
+A2 Broken Authentication
+A3 Sensitive Data Exposure
+A4 XML External Entities(XEE)
+Broken Access Control
+Security Misconfiguration
+Cross-site scripting(XSS)
+Insecure Deserialization
+Using Components with Known Vulnerabilities
+Insufficient Logging and Monitoring

@@ -1,0 +1,133 @@
+15 Excel Functions:
+1. Concatenate
+
+Use:
+Combine text, numbers, dates, and other data from numerous cells.
+
+SYNTAX = CONCATENATE (text1, text2, [text3], …)
+
+2. Len
+
+Use:
+to show the number of characters in each cell.
+
+SYNTAX = LEN (text)
+
+3. Days
+
+Use:
+The number of calendar days between two dates is calculated using this function
+
+SYNTAX =DAYS (end_date, start_date)
+
+4. Networkdays
+
+Use:
+The number of weekends is automatically excluded when using the function. 
+Also used in finance and accounting for determining employee benefits based on days worked.
+
+SYNTAX = NETWORKDAYS (start_date, end_date, [holidays])
+
+5. Sumifs
+
+Use:
+to add all of its arguments that meet multiple criteria
+
+SYNTAX = SUMIFS (sum_range, range1, criteria1, [range2], [criteria2], …)
+
+6. Averageifs
+
+Use:
+Used to take an average based on one or more parameters.
+
+SYNTAX = AVERAGEIFS (avg_rng, range1, criteria1, [range2], [criteria2], …)
+7. Countsifs
+
+Use:
+To  counts the number of values that satisfy a set of conditions. As a result, it doesn’t need a sum range like SUMIFS.
+
+SYNTAX = COUNTIFS (range, criteria)
+
+8. Counta()
+
+Use:
+Used to determines whether a cell is empty or not
+COUNTA will allow you to examine any gaps in the dataset.
+
+SYNTAX = COUNTA (value1, [value2], …)
+
+9.Vlookup
+
+VLOOKUP stands for ‘Vertical Lookup.’
+
+Use: 
+To tells Excel to look for a specific value in a column (the
+so-called ‘table array’) to return a value from another column in the same row.
+
+SYNTAX = VLOOKUP (lookup_value, table_array, column_index_num, [range_lookup])
+
+10. Hlookup
+HLOOKUP stands for 'Horizontal Lookup'
+
+Use:
+To looks for a value in an array of values, then returns a value from a row you specify in the table or array in the same column.
+
+SYNTAX = HLOOKUP (lookup_value, table_array, row_index, [range_lookup])
+
+11. If
+
+Use:
+This function is used to automate decision-making in our spreadsheets.
+IF function will ask you to run a logical test, as well as what action to take if the test is true or false.
+
+SYNTAX = IF (logical_test, [value_if_true], [value_if_false])
+
+12. Iferror
+
+Use:
+Used to display a more informative error than Excel does, or even execute an alternative computation.
+
+SYNTAX = IFERROR (value, value_if_error)
+
+13. Find/Search
+
+FIND returns the position of one text string within another
+
+SEARCH  will return results for Bigger or bigger, broadening the scope of the query. 
+
+SYNTAX = FIND (find_text, within_text, [start_num])
+
+SYNTAX = SEARCH (find_text, within_text, [start_num])
+
+4. Left/Right
+
+=RIGHT returns the “x” number of characters from the cell’s end
+=LEFT returns the “x” number of characters from the cell’s beginning
+
+SYNTAX = LEFT (text, [num_chars])
+
+SYNTAX = RIGHT (text, [num_chars])
+
+15. Rank
+
+=RANK is a quick way to show how values in a dataset rank in ascending or descending order.
+
+SYNTAX = RANK (number, ref, [order])
+
+The Most Essential 15 Excel Functions are:
+
+1. Concatenate
+2. Len
+3. Days
+4. Networkdays
+5. Sumifs
+6. Averageifs
+7. Countsifs
+8. Counta
+9. Vlookup
+10. Hlookup
+11. If
+12. Iferror
+13. Find/Search
+14. Left/Right
+15. Rank

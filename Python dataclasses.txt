@@ -1,0 +1,17 @@
+🐍Python dataclasses make it easy to define and work with data-centric classes.
+A 🧵  on
+ 🟠 What are Data Classes ?
+ 🟠 When to use Data Classes ?
+ 🟠 Examples of Data Classes
+What are Data Classes ?
+🟢 New feature introduced in Python 3.7
+🔵 Provide concise & efficient way to define classes that only contain data, as they automatically generate several special methods, such as `__init__`, `__repr__`, and `__eq__`
+🟢 Dataclasses can be customized through various options, such as specifying default values for fields, defining order for fields, and defining whether fields are mutable or not
+🔵 They can also be extended and subclassed like any other class in Python.
+When to use Data Classes ?
+🟢 When you want to define a simple data-holding class that only contains attributes and does not need any additional behavior(methods).
+🔵 Dataclasses can help you define such classes more concisely and with less boilerplate code
+🟢 When you want to define a class that primarily serves as a container for data but may also to implement some basic methods, such as `__init__`,  `__repr__`  & `__eq__`
+🔵 When you want to define a class that represents a structured data record or a data transfer object (DTO)
+
+Dataclass is one of the imp Python concepts, not many people are aware of it !!

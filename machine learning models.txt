@@ -1,0 +1,22 @@
+5 things you should do before you start building machine learning models 🔥
+1️⃣  Understand data:
+Don't rush to build models without thoroughly understanding the data.
+Spending enough time here will dictate critical items such as the features you'll use for the model.
+
+2️⃣ Have enough data:
+Make sure you have enough data for building the ML model.
+Having very little data can lead to the model overfitting or underfitting and, therefore, not being useful.
+
+3️⃣ Speak to experts:
+Talking to domain experts before building the model enables you to fill in the information gap, particularly with problems where you are not a domain expert.
+It can also inform you of the best features for training the ML model.
+
+4️⃣ Survey the literature:
+Survey the literature to see how people have previously solved the problem.
+By doing so, you can save time while not trying to reinvent the wheel.
+
+5️⃣ Consider model deployment:
+Consider model deployment, as this will dictate many things in the model development process.
+For instance, the model should be small enough if it's going to be deployed on edge devices.
+Also, consider the desired model latency and throughput.
+

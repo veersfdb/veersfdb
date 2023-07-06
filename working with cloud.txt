@@ -1,0 +1,35 @@
+Working with the Cloud
+General Requirements:
+One of the hallmarks of cloud services is the ease of sign-up and use. A contract between Hitachi Vantara and the Cloud Service Provider (CSP) is required before placing Hitachi Vantara data into the cloud, or before utilizing any cloud services to facilitate business processes.
+Our company's Information Security policies continue to apply when using cloud services. Users must have a legitimate business need to access cloud services and refrain from utilizing cloud services for reasons other than serving the intended Hitachi Vantara business purpose.
+How Secure is my Cloud Vendor?
+Common sense, regulations and customer contracts require that we vet CSPs before entrusting them with our data and using them for our business processes. Users of cloud services must first obtain approval from Enterprise Information Security, the Data Privacy Office, and the Business Continuity Management program before contracting for cloud services.
+Such a risk assessment applies to all types of cloud services: SaaS, such as Salesforce.com, ServiceNow, Atlassian's Jira and Confluence in the cloud, as well as for PaaS/IaaS such as AWS and Microsoft Azure.
+The Hitachi Vantara requester of a cloud service is responsible for initiating the Vendor Risk Assessment.
+Using Cloud Platform Services:
+Platform-as-a-Service (PaaS) or Infrastructure-as-a-Service (IaaS) providers, such as Amazon Web Services (AWS) and Microsoft Azure offer a wide range of cloud based computing and storage based services in the Cloud.
+The versatile nature of these services allows the user to configure the cloud platform freely while at the same time requiring the user to set up security in accordance with Hitachi Vantara's Cloud Platform Security Standards.
+These include requirements for:
+All user accounts must be linked to a Master Account
+Test Data vs. Production Data
+Encryption when stored-at-rest and in transit
+Identity and Access Management via our company's SSO solution
+Vulnerability Scanning and Patch Management
+Storing, Transmitting and Accessing Data
+Data plays a central role when using cloud services. Naturally, protecting access to that Data, and its secure storage and transmission is pivotal when using cloud services.
+Hitachi Vantara's requirements for cloud services include:
+All user accounts must be linked to a Master Account
+Only Hitachi Vantara business emails are permitted for user identity - Absolutely no third party or personal user emails for user identities
+Periodic review of user access privileges and logging of user activity
+Production data must be obfuscated before being used in development and test
+Timely reporting of security incidents
+Data cleanup at termination of Cloud services
+Developing Products and Services for and in the Cloud
+The market demands that our products and services can be developed, deployed and operated securely within the cloud. Additionally, cloud platform services are a preferred environment for testing and to offer demos and training.
+The Hitachi Vantara Secure Development Framework provides requirements covering:
+Security features for products and solutions
+Systems Security Engineering
+Vulnerability Management and Disclosure
+Cloud Platform Security Standards, such as for AWS
+Embedding Security into methodologies like Agile Development or DevSecOps
+Secure delivery throughout your product supply chain.
